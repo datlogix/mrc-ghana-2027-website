@@ -1,0 +1,139 @@
+/**
+ * MRC Ghana 2027 — central event configuration.
+ *
+ * This is the ONE place to update dates, venue, registration, contacts and
+ * Global Olympiad details. Every page reads from here. See docs/CONTENT_EDITING.md.
+ *
+ * Rules:
+ *  - Only publish information that is confirmed by the organising committee.
+ *  - Leave `confirmed: false` (or `null`) for anything undecided; the website
+ *    then shows "To be announced" automatically.
+ */
+
+export type ConfirmationStatus = "confirmed" | "to-be-announced";
+
+export const event = {
+  name: "Minoan RobotSports Competition Ghana 2027",
+  shortName: "MRC Ghana 2027",
+  tagline: "Create. Code. Compete.",
+  description:
+    "Where robotics meets sport. Join innovators, students and teams in Accra for two days of engineering, coding, creativity and competition.",
+
+  /** Ghana competition dates. Times are Ghana time (GMT, UTC+0). */
+  dates: {
+    start: "2027-01-30",
+    end: "2027-01-31",
+    display: "30–31 January 2027",
+    days: [
+      { date: "2027-01-30", label: "Saturday, 30 January 2027" },
+      { date: "2027-01-31", label: "Sunday, 31 January 2027" },
+    ],
+    timeZone: "GMT",
+  },
+
+  city: "Accra",
+  country: "Ghana",
+
+  /**
+   * Venue. Keep `status: "to-be-announced"` until the organising committee
+   * confirms in writing. When confirmed, fill in the fields and change status.
+   */
+  venue: {
+    status: "to-be-announced" as ConfirmationStatus,
+    name: null as string | null,
+    address: null as string | null,
+    googleMapsUrl: null as string | null,
+    directions: null as string | null,
+    accessibility: null as string | null,
+    visitorGuidance: null as string | null,
+  },
+
+  /**
+   * Programme / timetable. Keep `status: "to-be-announced"` until the official
+   * timetable is approved. Do not assign sports or ceremonies to days before then.
+   */
+  programme: {
+    status: "to-be-announced" as ConfirmationStatus,
+    reportingAndInspection: null as string | null,
+    /** Fill per day once approved, e.g. [{ time: "08:00", title: "Registration desk opens" }] */
+    schedule: {
+      "2027-01-30": [] as { time: string; title: string; detail?: string }[],
+      "2027-01-31": [] as { time: string; title: string; detail?: string }[],
+    },
+  },
+
+  /**
+   * Ghana sports programme approval. The seven sports in src/data/categories.ts
+   * are the controlled working list. Set to "approved" once the organising
+   * committee's approval record (and any written H.E.R.O. confirmation) exists.
+   */
+  programmeApproval: {
+    status: "pending" as "pending" | "approved",
+    approvedOn: null as string | null,
+    reference: null as string | null,
+  },
+
+  organisers: {
+    ghana: {
+      name: "The MakersPlace",
+      url: "https://makersplacegh.com",
+    },
+    international: {
+      name: "Hellenic Educational Robotics Organization",
+      abbreviation: "H.E.R.O.",
+      url: "https://www.he-ro.gr",
+      mrcUrl: "https://www.he-ro.gr/minoan-robotsports-competition",
+    },
+  },
+
+  /**
+   * Registration — the EXISTING Lovable application. Do not rebuild it here.
+   * Set NEXT_PUBLIC_REGISTRATION_URL in the hosting environment, or replace the
+   * fallback below once the published URL is confirmed.
+   */
+  registration: {
+    url: process.env.NEXT_PUBLIC_REGISTRATION_URL || "",
+    /** "open" | "opening-soon" | "closed". Controls button labels and messaging. */
+    status: "open" as "open" | "opening-soon" | "closed",
+    /**
+     * Query parameter the Lovable app accepts for pre-selecting a category,
+     * e.g. "category". Leave null unless the Lovable app has been confirmed
+     * to support it — otherwise buttons link to the general registration start.
+     */
+    categoryParam: null as string | null,
+    /** Fee and deadline: leave null until approved. */
+    fee: null as string | null,
+    deadline: null as string | null,
+  },
+
+  contact: {
+    /** Organiser email shown publicly (as published on the previous site). */
+    email: "info@makersplacegh.com",
+    phone: null as string | null,
+    whatsapp: null as string | null,
+    /** Only list verified official channels. */
+    social: [] as { label: string; url: string }[],
+  },
+
+  /** International final — information from https://www.he-ro.gr/minoan-robotsports-competition */
+  globalOlympiad: {
+    name: "MRC Global Olympiad 2027",
+    edition: "6th edition",
+    dates: { start: "2027-04-23", end: "2027-04-26", display: "23–26 April 2027" },
+    city: "Chania, Crete",
+    country: "Greece",
+    venue: "Chania Kladissos Indoor Hall",
+    sourceUrl: "https://www.he-ro.gr/minoan-robotsports-competition",
+    verifiedOn: "2026-10-14",
+  },
+
+  /** Partner/sponsor enquiries are delivered to ENQUIRY_TO_EMAIL (server env). */
+  partnerEnquiryDestinationNote:
+    "Set ENQUIRY_TO_EMAIL in the hosting environment to the approved organiser mailbox.",
+} as const;
+
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.mrcghana.com").replace(/\/$/, "");
+
+/** Event start in Ghana time (GMT). Used by the countdown. */
+export const eventStartUtc = Date.UTC(2027, 0, 30, 0, 0, 0);
+export const eventEndUtc = Date.UTC(2027, 1, 1, 0, 0, 0); // end of Sunday 31 Jan (GMT)

@@ -23,8 +23,8 @@ export default function MediaPage() {
         intro="Official videos from the Hellenic Educational Robotics Organization (H.E.R.O.). Videos load only when you press play."
       >
         <nav aria-label="Video sections" className="flex flex-wrap gap-2">
-          <a href="#categories" className="btn btn-ghost-light !min-h-10 !py-2 text-sm">Category videos</a>
-          <a href="#international" className="btn btn-ghost-light !min-h-10 !py-2 text-sm">International highlights</a>
+          <a href="#categories" className="btn btn-outline !min-h-10 !py-2 text-sm">Category videos</a>
+          <a href="#international" className="btn btn-outline !min-h-10 !py-2 text-sm">International highlights</a>
         </nav>
       </PageHero>
 
@@ -42,7 +42,7 @@ export default function MediaPage() {
                 {vids.length ? (
                   <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{vids.map((v) => <VideoEmbed key={v.id} video={v} />)}</div>
                 ) : (
-                  <p className="mt-6 rounded-xl border border-dashed border-line bg-mist p-5 text-muted">
+                  <p className="mt-6 rounded-md border border-dashed border-line bg-mist p-5 text-muted">
                     A verified video for {c.name} has not yet been identified. See the <ExternalLink href={c.rulesUrl} className="font-semibold text-navy-700 underline underline-offset-4">official rules</ExternalLink>.
                   </p>
                 )}

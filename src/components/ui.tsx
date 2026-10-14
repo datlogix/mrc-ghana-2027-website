@@ -25,12 +25,12 @@ export function SectionHeading({
 type NoticeTone = "info" | "pending" | "warning";
 export function Notice({ tone = "info", title, children }: { tone?: NoticeTone; title: string; children: ReactNode }) {
   const tones: Record<NoticeTone, string> = {
-    info: "border-navy-600/30 bg-mist",
-    pending: "border-gold-500/60 bg-[#fbf6e8]",
-    warning: "border-[#b42318]/40 bg-[#fdf2f1]",
+    info: "border-green-700 bg-secondary",
+    pending: "border-gold-500 bg-gold-soft",
+    warning: "border-[#b42318] bg-[#fdf2f1]",
   };
   return (
-    <div role="note" className={`rounded-2xl border-l-4 ${tones[tone]} p-5`}>
+    <div role="note" className={`rounded-md border-l-4 ${tones[tone]} p-5`}>
       <p className="font-semibold text-navy-950">{title}</p>
       <div className="mt-1 text-[0.98rem] text-body">{children}</div>
     </div>
@@ -42,14 +42,14 @@ export function Breadcrumbs({ items }: { items: { name: string; path: string }[]
   return (
     <>
       <nav aria-label="Breadcrumb" className="text-sm">
-        <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-slate-300">
+        <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-muted">
           {all.map((it, i) => (
             <li key={it.path} className="flex items-center gap-2">
-              {i > 0 && <span aria-hidden className="text-slate-500">/</span>}
+              {i > 0 && <span aria-hidden className="text-input">/</span>}
               {i === all.length - 1 ? (
-                <span aria-current="page" className="text-white">{it.name}</span>
+                <span aria-current="page" className="font-medium text-navy-950">{it.name}</span>
               ) : (
-                <Link href={it.path} className="hover:text-gold-300 underline-offset-4 hover:underline">{it.name}</Link>
+                <Link href={it.path} className="underline-offset-4 hover:text-green-700 hover:underline">{it.name}</Link>
               )}
             </li>
           ))}
@@ -64,18 +64,16 @@ export function PageHero({
   eyebrow, title, intro, crumbs, children,
 }: { eyebrow?: string; title: string; intro?: ReactNode; crumbs: { name: string; path: string }[]; children?: ReactNode }) {
   return (
-    <header className="bg-midnight relative overflow-hidden text-white">
-      <div className="grid-lines absolute inset-0" aria-hidden />
-      <div className="container-x relative pt-10 pb-14 sm:pt-14 sm:pb-20">
+    <header className="border-b border-line bg-white">
+      <div className="container-x pb-12 pt-8 sm:pb-16 sm:pt-10">
         <Breadcrumbs items={crumbs} />
-        <div className="mt-8 max-w-3xl on-dark">
+        <div className="mt-10 max-w-3xl">
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-          <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold !text-white">{title}</h1>
-          {intro && <div className="mt-5 text-lg text-slate-300">{intro}</div>}
+          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">{title}</h1>
+          {intro && <div className="mt-5 text-lg text-muted">{intro}</div>}
         </div>
         {children && <div className="mt-8">{children}</div>}
       </div>
-      <div className="kente" aria-hidden />
     </header>
   );
 }

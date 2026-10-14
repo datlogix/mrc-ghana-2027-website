@@ -3,8 +3,7 @@ import { categories } from "@/data/categories";
 
 export default function NotFound() {
   return (
-    <section className="bg-midnight relative overflow-hidden text-white">
-      <div className="grid-lines absolute inset-0" aria-hidden />
+    <section className="bg-navy-band relative overflow-hidden text-white">
       <div className="container-x relative py-24 text-center sm:py-32 on-dark">
         <p className="eyebrow justify-center">Error 404</p>
         <h1 className="mt-4 text-5xl font-extrabold !text-white sm:text-6xl">This robot went off the line.</h1>
@@ -19,7 +18,7 @@ export default function NotFound() {
           ))}
         </ul>
       </div>
-      <div className="kente" aria-hidden />
+      
     </section>
   );
 }

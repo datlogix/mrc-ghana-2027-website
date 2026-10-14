@@ -6,7 +6,8 @@ import { faqs } from "@/data/faqs";
 import { approvedPartners } from "@/data/partners";
 import { CategoryCard } from "@/components/CategoryCard";
 import { Countdown } from "@/components/Countdown";
-import { HeroArt } from "@/components/HeroArt";
+import Image from "next/image";
+import heroImage from "../../public/images/hero-robotics-lab.jpg";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { ArrowIcon, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
@@ -30,26 +31,32 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="bg-midnight relative overflow-hidden text-white" aria-labelledby="hero-title">
-        <div className="grid-lines absolute inset-0" aria-hidden />
-        <div className="container-x relative grid items-center gap-12 pb-16 pt-12 sm:pt-16 lg:grid-cols-[1.15fr_1fr] lg:pb-24 lg:pt-20">
-          <div className="on-dark">
-            <p className="eyebrow animate-rise">Minoan RobotSports Competition</p>
+      <section className="relative isolate overflow-hidden bg-ink text-white" aria-labelledby="hero-title">
+        <Image
+          src={heroImage}
+          alt=""
+          priority
+          quality={70}
+          placeholder="blur"
+          sizes="(max-width: 767px) 75vw, 100vw"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]"
+        />
+        <div className="hero-overlay absolute inset-0 -z-10" aria-hidden />
+        <div className="container-x pb-14 pt-14 sm:pb-20 sm:pt-20 lg:pb-24 lg:pt-24">
+          <div className="max-w-2xl on-dark">
+            <p className="eyebrow animate-rise">{event.organisers.ghana.name} · Minoan RobotSports Competition</p>
             <h1 id="hero-title" className="mt-5 text-5xl font-extrabold !text-white sm:text-6xl lg:text-7xl">
-              MRC GHANA <span className="text-gold-400">2027</span>
+              MRC Ghana <span className="text-gold-500">2027</span>
             </h1>
-            <p className="animate-rise delay-2 mt-4 font-display text-2xl font-bold text-gold-300 sm:text-3xl">{event.tagline}</p>
-            <p className="animate-rise delay-2 mt-5 max-w-xl text-lg text-slate-300">{event.description}</p>
+            <p className="animate-rise delay-1 mt-4 font-display text-2xl font-bold text-white sm:text-3xl">{event.tagline}</p>
+            <p className="animate-rise delay-2 mt-4 max-w-xl text-lg text-slate-200">{event.description}</p>
 
-            <div className="animate-rise delay-3 mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-y border-white/10 py-5">
-              <p className="font-display text-xl font-bold text-white">
-                <time dateTime={event.dates.start}>{event.dates.display}</time>
-                <span className="mx-2 text-gold-400" aria-hidden>|</span>
-                {event.city}, {event.country}
+            <div className="animate-rise delay-2 mt-7 flex flex-wrap items-center gap-3">
+              <p className="inline-flex items-center gap-2 rounded-md border border-white/25 bg-ink/40 px-3.5 py-2 font-semibold text-white">
+                <span className="h-2 w-2 rounded-full bg-gold-500" aria-hidden />
+                <time dateTime={event.dates.start}>{event.dates.display}</time> · {event.city}, {event.country}
               </p>
-              <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 px-3 py-1 text-sm font-semibold text-gold-300">
-                Venue to be announced
-              </p>
+              <p className="inline-flex items-center rounded-md border border-white/25 bg-ink/40 px-3.5 py-2 text-sm text-slate-200">Venue to be announced</p>
             </div>
 
             <div className="animate-rise delay-3 mt-8 flex flex-wrap gap-3">
@@ -62,12 +69,28 @@ export default function Home() {
               <Countdown />
             </div>
           </div>
-          <div className="relative mx-auto aspect-square w-full max-w-md lg:max-w-none">
-            <HeroArt />
+        </div>
+        <div className="container-x absolute inset-x-0 bottom-5 hidden justify-end md:flex" aria-hidden>
+          <p className="flex items-center gap-3 text-xs font-semibold tracking-[0.28em] text-white/80">
+            <span className="h-px w-6 bg-gold-500" /> CREATE. CODE. COMPETE.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Registration notice (matches the registration app) ── */}
+      <div className="border-b border-line bg-gold-soft">
+        <div className="container-x flex gap-4 py-6">
+          <svg className="mt-0.5 h-6 w-6 shrink-0 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+            <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" strokeLinejoin="round" /><path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <div>
+            <p className="font-semibold text-navy-950">Registration is an expression of interest, not a confirmed entry.</p>
+            <p className="mt-1 text-[0.98rem] text-body">
+              {event.organisers.ghana.name} reviews every entry against the current H.E.R.O. rules and contacts the applicant. Submission does not confirm eligibility, selection or qualification.
+            </p>
           </div>
         </div>
-        <div className="kente" aria-hidden />
-      </section>
+      </div>
 
       {/* ── What is MRC ── */}
       <Section labelledBy="what-title">
@@ -114,9 +137,11 @@ export default function Home() {
             <li key={c.slug}><CategoryCard c={c} index={i} /></li>
           ))}
           <li className="hidden xl:block">
-            <Link href="/participate" className="flex h-full flex-col justify-between rounded-[var(--radius-card)] bg-navy-950 p-7 text-white transition-colors hover:bg-navy-800">
-              <span className="font-display text-xl font-bold">Not sure where to start?</span>
-              <span className="mt-4 inline-flex items-center gap-2 font-semibold text-gold-300">How participation works <ArrowIcon /></span>
+            <Link href="/participate" className="flex h-full flex-col rounded-[var(--radius-card)] bg-green-soft p-6 transition-colors hover:bg-[#d3f0e2]">
+              <svg className="h-7 w-7 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5c0-.9.5-1.7 1.1-2.2A6 6 0 0 0 12 3Z" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              <span className="mt-8 font-display text-lg font-bold text-navy-950">Not sure where to start?</span>
+              <span className="mt-2 flex-1 text-[0.95rem] text-body">Explore each sport&apos;s rules before choosing your team&apos;s challenge.</span>
+              <span className="mt-5 inline-flex items-center gap-2 font-semibold text-green-700">How participation works <ArrowIcon /></span>
             </Link>
           </li>
         </ul>
@@ -124,17 +149,22 @@ export default function Home() {
 
       {/* ── How it works ── */}
       <Section labelledBy="how-title">
-        <SectionHeading id="how-title" eyebrow="How participation works" title="From first idea to competition day." align="center" />
-        <ol className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeading id="how-title" eyebrow="How participation works" title="From first idea to competition day." />
+        <ol className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {homeSteps.map((s, i) => (
-            <li key={s.title} className="card p-6">
-              <span className="font-display text-sm font-extrabold tracking-[0.2em] text-gold-700">STEP {i + 1}</span>
-              <h3 className="mt-2 text-lg font-bold">{s.title}</h3>
+            <li key={s.title} className="border-t border-line pt-6">
+              <span className="flex items-start justify-between">
+                <span aria-hidden />
+                <span aria-hidden data-n={String(i + 1).padStart(2, "0")} className="font-display text-3xl font-extrabold text-navy-950/15 before:content-[attr(data-n)]" />
+              </span>
+              <h3 className="mt-2 text-lg font-bold">
+                <span className="sr-only">Step {i + 1}: </span>{s.title}
+              </h3>
               <p className="mt-2 text-[0.98rem] text-muted">{s.body}</p>
             </li>
           ))}
         </ol>
-        <p className="mt-10 text-center">
+        <p className="mt-10">
           <Link href="/participate" className="inline-flex items-center gap-2 font-semibold text-navy-800 underline underline-offset-4">
             See the full participation guide <ArrowIcon />
           </Link>
@@ -142,7 +172,7 @@ export default function Home() {
       </Section>
 
       {/* ── Videos ── */}
-      <section className="bg-midnight py-16 text-white sm:py-24" aria-labelledby="watch-title">
+      <section className="bg-navy-band py-16 text-white sm:py-24" aria-labelledby="watch-title">
         <div className="container-x">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionHeading dark id="watch-title" eyebrow="Watch" title="Robot sports in action." intro="Official category videos from H.E.R.O., the international organiser of MRC." />
@@ -171,7 +201,7 @@ export default function Home() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="card p-6">
-              <p className="text-sm font-bold uppercase tracking-[0.14em] text-gold-700">Ghana competition</p>
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-green-700">Ghana competition</p>
               <p className="mt-3 font-display text-2xl font-bold text-navy-950">{event.dates.display}</p>
               <p className="mt-1 text-muted">{event.city}, {event.country}</p>
               <p className="mt-1 text-muted">Venue to be announced</p>
@@ -208,8 +238,7 @@ export default function Home() {
       {/* ── Partners ── */}
       <section className="py-16 sm:py-24" aria-labelledby="partner-title">
         <div className="container-x">
-          <div className="bg-midnight relative overflow-hidden rounded-[2rem] px-6 py-14 text-white sm:px-12 lg:px-16">
-            <div className="grid-lines absolute inset-0" aria-hidden />
+          <div className="bg-navy-band relative overflow-hidden rounded-[var(--radius-card)] px-6 py-14 text-white sm:px-12 lg:px-16">
             <div className="relative grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
               <div className="on-dark">
                 <p className="eyebrow">Partners & sponsors</p>
@@ -242,7 +271,7 @@ export default function Home() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
           <div>
             <SectionHeading id="faq-title" eyebrow="Essentials" title="Good to know." />
-            <dl className="mt-8 divide-y divide-line rounded-2xl border border-line">
+            <dl className="mt-8 divide-y divide-line rounded-md border border-line">
               {[
                 ["Dates", event.dates.display],
                 ["City", `${event.city}, ${event.country}`],
@@ -263,7 +292,7 @@ export default function Home() {
                 <details key={f.q} className="group py-5">
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-6 font-display text-lg font-bold text-navy-950">
                     {f.q}
-                    <span className="mt-1 text-gold-700 transition-transform group-open:rotate-45" aria-hidden>+</span>
+                    <span className="mt-1 text-green-700 transition-transform group-open:rotate-45" aria-hidden>+</span>
                   </summary>
                   <p className="mt-3 text-muted">{f.a}</p>
                 </details>
@@ -275,7 +304,7 @@ export default function Home() {
       </Section>
 
       {/* ── Final CTA ── */}
-      <section className="bg-midnight text-white" aria-labelledby="cta-title">
+      <section className="bg-navy-band text-white" aria-labelledby="cta-title">
         <div className="container-x py-16 text-center sm:py-20 on-dark">
           <p className="eyebrow justify-center">{event.dates.display} · {event.city}</p>
           <h2 id="cta-title" className="mx-auto mt-4 max-w-4xl text-4xl font-extrabold !text-white sm:text-5xl">Build it. Program it. Bring it to Accra.</h2>

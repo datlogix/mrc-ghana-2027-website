@@ -34,16 +34,16 @@ export function RegisterLauncher() {
   return (
     <div className="card p-7">
       {cat && (
-        <p className="mb-4 rounded-xl bg-mist px-4 py-3">
+        <p className="mb-4 rounded-md bg-mist px-4 py-3">
           You chose <strong className="text-navy-950">{cat.name}</strong>.
           {event.registration.categoryParam ? " It will be pre-selected in the form." : " Select it in the registration form."}
         </p>
       )}
       <a href={href} className="btn btn-gold w-full sm:w-auto" rel="noopener">
-        Continue to registration <ArrowIcon />
+        Start registration <ArrowIcon />
       </a>
       <p className="mt-4 text-sm text-muted">
-        You will be taken to the official MRC Ghana 2027 registration application ({new URL(event.registration.url).host}). Your team information is stored there, not on this website.
+        You will continue to the official MRC Ghana 2027 registration application ({new URL(event.registration.url).host}). Sign in with your email (a secure link, no password), then save your progress and return at any time. Your team information is stored there, not on this website.
       </p>
     </div>
   );

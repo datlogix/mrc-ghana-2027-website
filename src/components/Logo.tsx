@@ -1,17 +1,18 @@
-/** Original typographic wordmark. Replace with the approved official logo when permission is confirmed. */
-export function Logo({ compact = false }: { compact?: boolean }) {
+/** Typographic wordmark in the registration app's style. Replace with the approved official logo when available. */
+export function Logo({ tone = "dark" }: { tone?: "dark" | "light" }) {
+  const main = tone === "dark" ? "text-navy-950" : "text-white";
   return (
-    <span className="flex items-center gap-3">
-      <svg viewBox="0 0 40 40" className="h-9 w-9 shrink-0" aria-hidden>
-        <rect x="1" y="1" width="38" height="38" rx="10" fill="#c9a24a" />
-        <path d="M20 8.5l2.9 8.1h8.6l-6.9 5 2.6 8.2L20 24.8l-7.2 5 2.6-8.2-6.9-5h8.6z" fill="#070f22" />
-      </svg>
-      {!compact && (
-        <span className="whitespace-nowrap leading-none">
-          <span className="block font-display text-[1.05rem] font-extrabold tracking-[0.08em] text-white">MRC GHANA</span>
-          <span className="mt-1 block text-[0.7rem] font-semibold tracking-[0.32em] text-gold-400">2027</span>
+    <span className="whitespace-nowrap leading-none">
+      <span className={`block font-display text-[1.45rem] font-extrabold tracking-[-0.02em] ${main}`}>
+        MRC <span className="text-green-700">Ghana</span>
+      </span>
+      <span className={`mt-1.5 flex items-center gap-2 text-[0.68rem] font-bold tracking-[0.3em] ${main}`}>
+        2027
+        <span className="flex h-[5px] w-4" aria-hidden>
+          <span className="flex-1 bg-green-700" />
+          <span className="flex-1 bg-gold-500" />
         </span>
-      )}
+      </span>
     </span>
   );
 }

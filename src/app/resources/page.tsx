@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { categorySheets, generalResources } from "@/data/downloads";
 import { categories } from "@/data/categories";
-import { CategoryIcon } from "@/components/CategoryIcon";
+import { CategoryIcon, tileClass } from "@/components/CategoryIcon";
 import { DownloadIcon, Notice, PageHero, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 
@@ -28,7 +28,7 @@ export default function ResourcesPage() {
             const c = categories[i];
             return (
               <li key={d.id} className="card flex items-start gap-5 p-6">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-950 text-gold-400"><CategoryIcon slug={c.slug} className="h-7 w-7" /></span>
+                <span className={`icon-tile ${tileClass(i)} h-12 w-12 shrink-0`}><CategoryIcon slug={c.slug} className="h-7 w-7" /></span>
                 <div className="min-w-0 flex-1">
                   <h3 className="text-lg font-bold">{d.title}</h3>
                   <p className="mt-1 text-[0.98rem] text-muted">{d.description}</p>
@@ -53,7 +53,7 @@ export default function ResourcesPage() {
             <li key={r.id} className="card p-6">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-lg font-bold">{r.title}</h3>
-                {r.status === "forthcoming" && <span className="shrink-0 rounded-full bg-[#fbf6e8] px-2.5 py-0.5 text-xs font-bold uppercase tracking-[0.08em] text-gold-700">Coming soon</span>}
+                {r.status === "forthcoming" && <span className="shrink-0 rounded-full bg-gold-soft px-2.5 py-0.5 text-xs font-bold uppercase tracking-[0.08em] text-green-700">Coming soon</span>}
               </div>
               <p className="mt-2 text-[0.98rem] text-muted">{r.description}</p>
               <p className="mt-3 text-sm text-muted">For: {r.audience}</p>

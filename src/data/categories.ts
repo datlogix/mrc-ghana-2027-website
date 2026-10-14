@@ -24,6 +24,8 @@ export type Category = {
   strapline: string;
   /** Plain-English summary for cards and meta descriptions (≤ 160 chars). */
   summary: string;
+  /** Team size as published in the official rules; null when not yet published. */
+  teamSize: string | null;
   icon: CategorySlug;
   rulesUrl: string;
   sourceId: string;
@@ -80,6 +82,7 @@ export const categories: Category[] = [
     strapline: "Precision piloting missions",
     summary:
       "Teams pilot a small indoor drone through a secret course of hoops, obstacles and landing pads, scoring points for precision and order.",
+    teamSize: "2–3 team members",
     icon: "drones",
     rulesUrl: "https://www.he-ro.gr/mrc-drones",
     sourceId: "rules-drones",
@@ -158,6 +161,7 @@ export const categories: Category[] = [
     strapline: "Alliance aerial football",
     summary:
       "Alliances of three caged 'drone balls' play aerial football in a netted arena — only the Golden Ball drone can score through the opponents' hoop.",
+    teamSize: "2–3 team members",
     icon: "drone-soccer",
     rulesUrl: "https://www.he-ro.gr/drone-soccer",
     sourceId: "rules-drone-soccer",
@@ -236,6 +240,7 @@ export const categories: Category[] = [
     strapline: "Autonomous line-following race",
     summary:
       "An autonomous robot follows a black line around a secret track. The fastest clean run within three minutes wins. Basic and Advanced divisions.",
+    teamSize: "2–3 team members",
     icon: "marathon",
     rulesUrl: "https://www.he-ro.gr/mrc-marathon",
     sourceId: "rules-marathon",
@@ -316,6 +321,7 @@ export const categories: Category[] = [
     strapline: "Remote-controlled robot football",
     summary:
       "Alliances of three remote-controlled robots play five-minute football matches, using motorised kicking mechanisms to score goals.",
+    teamSize: "2–3 team members",
     icon: "football",
     rulesUrl: "https://www.he-ro.gr/mrc-soccer",
     sourceId: "rules-football",
@@ -391,6 +397,7 @@ export const categories: Category[] = [
     strapline: "Robotic foam-dart precision",
     summary:
       "Teams build a handheld, sensor-triggered foam-dart launcher and aim for three scoring targets at two distances.",
+    teamSize: "2–3 team members",
     icon: "shooting",
     rulesUrl: "https://www.he-ro.gr/mrc-shooting",
     sourceId: "rules-shooting",
@@ -469,6 +476,7 @@ export const categories: Category[] = [
     strapline: "Autonomous robotic bow",
     summary:
       "An autonomous robot bow adjusts its own aim and fires a team-made, blunt-tipped arrow at a ten-ring target from four distances.",
+    teamSize: "2–3 team members",
     icon: "archery",
     rulesUrl: "https://www.he-ro.gr/mrc-archery",
     sourceId: "rules-archery",
@@ -546,6 +554,7 @@ export const categories: Category[] = [
     strapline: "Innovation showcase",
     summary:
       "A showcase category for original robotics and engineering projects. Detailed H.E.R.O. rules for 2027 are awaiting publication.",
+    teamSize: null,
     icon: "exhibition",
     rulesUrl: "https://www.he-ro.gr/mrc-exhibition",
     sourceId: "rules-exhibition",

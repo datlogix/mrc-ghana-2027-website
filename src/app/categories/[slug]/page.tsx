@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { categories, categoryPdfPath, getCategory } from "@/data/categories";
 import { videosForCategory } from "@/data/videos";
 import { event } from "@/config/event";
-import { CategoryIcon } from "@/components/CategoryIcon";
+import { CategoryIcon, tileClass } from "@/components/CategoryIcon";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { ArrowIcon, Breadcrumbs, DownloadIcon, ExternalIcon, ExternalLink, Notice } from "@/components/ui";
 import { formatDate } from "@/lib/format";
@@ -64,47 +64,45 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <header className="bg-midnight relative overflow-hidden text-white">
-        <div className="grid-lines absolute inset-0" aria-hidden />
-        <div className="container-x relative pb-14 pt-10 sm:pb-20 sm:pt-14">
+      <header className="border-b border-line bg-white">
+        <div className="container-x pb-12 pt-8 sm:pb-16 sm:pt-10">
           <Breadcrumbs items={[{ name: "Categories", path: "/categories" }, { name: c.name, path: `/categories/${c.slug}` }]} />
-          <div className="mt-10 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
-            <div className="on-dark">
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center">
+            <div className="min-w-0">
               <p className="eyebrow">Category {String(idx + 1).padStart(2, "0")} of 07 · {c.strapline}</p>
-              <h1 className="mt-4 text-5xl font-extrabold !text-white sm:text-6xl">{c.name}</h1>
-              <p className="mt-5 max-w-2xl text-lg text-slate-300">{c.summary}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <h1 className="mt-3 text-5xl font-extrabold sm:text-6xl">{c.name}</h1>
+              <p className="mt-5 max-w-2xl text-lg text-muted">{c.summary}</p>
+              <div className="mt-8 flex flex-wrap gap-3 max-sm:[&>*]:w-full max-sm:[&>*]:whitespace-normal">
                 <Link href={registerLanding(c.slug)} className="btn btn-gold">Register for This Category <ArrowIcon /></Link>
-                <a href={categoryPdfPath(c.slug)} className="btn btn-ghost-light" download>
+                <a href={categoryPdfPath(c.slug)} className="btn btn-outline" download>
                   <DownloadIcon /> Download Category Information (PDF)
                 </a>
-                <ExternalLink href={c.rulesUrl} className="btn btn-ghost-light">
+                <ExternalLink href={c.rulesUrl} className="btn btn-outline">
                   Read Official H.E.R.O. Rules <ExternalIcon />
                 </ExternalLink>
               </div>
             </div>
             <div className="hidden justify-end lg:flex" aria-hidden>
-              <div className="flex h-56 w-56 items-center justify-center rounded-[2.5rem] border border-white/10 bg-white/[0.04] text-gold-400">
-                <CategoryIcon slug={c.slug} className="h-32 w-32" />
+              <div className={`icon-tile ${tileClass(idx)} h-52 w-52 !rounded-[var(--radius-card)]`}>
+                <CategoryIcon slug={c.slug} className="h-28 w-28" />
               </div>
             </div>
           </div>
         </div>
-        <div className="kente" aria-hidden />
       </header>
 
       <div className="container-x grid gap-12 py-14 lg:grid-cols-[16rem_1fr] lg:py-20">
         <aside className="lg:sticky lg:top-28 lg:self-start">
           <nav aria-label="On this page" className="hidden lg:block">
-            <p className="text-sm font-bold uppercase tracking-[0.14em] text-muted">On this page</p>
+            <p className="eyebrow">On this page</p>
             <ul className="mt-4 space-y-2 border-l border-line">
               {toc.map(([id, label]) => (
-                <li key={id}><a href={`#${id}`} className="-ml-px block border-l-2 border-transparent py-1 pl-4 text-[0.95rem] text-muted hover:border-gold-500 hover:text-navy-950">{label}</a></li>
+                <li key={id}><a href={`#${id}`} className="-ml-px block border-l-2 border-transparent py-1 pl-4 text-[0.95rem] text-muted hover:border-green-700 hover:text-navy-950">{label}</a></li>
               ))}
             </ul>
           </nav>
           <div className="card mt-0 p-5 lg:mt-8">
-            <p className="text-sm font-bold uppercase tracking-[0.14em] text-muted">Rule source</p>
+            <p className="eyebrow">Rule source</p>
             <ExternalLink href={c.rulesUrl} className="mt-2 block break-words font-semibold text-navy-700 underline underline-offset-4">
               {c.rulesUrl.replace("https://", "")}
             </ExternalLink>
@@ -130,7 +128,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             <section aria-labelledby="eligibility" className="scroll-mt-28">
               <h2 id="eligibility" className="text-2xl font-bold">Age eligibility & divisions</h2>
               {c.divisions && <p className="mt-4">{c.divisions}</p>}
-              <div className="mt-5 overflow-hidden rounded-2xl border border-line">
+              <div className="mt-5 overflow-hidden rounded-[var(--radius-card)] border border-line">
                 <table className="w-full text-left">
                   <caption className="sr-only">Published age categories for {c.name}</caption>
                   <thead className="bg-mist text-sm uppercase tracking-[0.1em] text-muted">
@@ -174,8 +172,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             <h2 id="checklist" className="text-2xl font-bold">Preparation checklist</h2>
             <ul className="mt-5 grid gap-3">
               {c.checklist.map((t) => (
-                <li key={t} className="flex items-start gap-3 rounded-xl border border-line bg-white p-4">
-                  <svg className="mt-0.5 h-6 w-6 shrink-0 text-gold-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><rect x="3" y="3" width="18" height="18" rx="5" /><path d="m8 12 3 3 5-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <li key={t} className="flex items-start gap-3 rounded-md border border-line bg-white p-4">
+                  <svg className="mt-0.5 h-6 w-6 shrink-0 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><rect x="3" y="3" width="18" height="18" rx="5" /><path d="m8 12 3 3 5-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   <span>{t}</span>
                 </li>
               ))}
@@ -205,17 +203,17 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             {vids.length > 0 ? (
               <div className="mt-5 grid gap-6 md:grid-cols-2">{vids.map((v) => <VideoEmbed key={v.id} video={v} />)}</div>
             ) : (
-              <div className="mt-5 rounded-2xl border border-dashed border-line bg-mist p-8">
+              <div className="mt-5 rounded-[var(--radius-card)] border border-dashed border-line bg-mist p-8">
                 <p className="font-semibold text-navy-950">A verified video for this category will be added soon.</p>
                 <p className="mt-2 text-muted">In the meantime, read the <ExternalLink href={c.rulesUrl} className="font-semibold text-navy-700 underline underline-offset-4">official H.E.R.O. rules</ExternalLink> or browse the <Link href="/media" className="font-semibold text-navy-700 underline underline-offset-4">video library</Link>.</p>
               </div>
             )}
           </section>
 
-          <section className="rounded-[2rem] bg-midnight p-8 text-white sm:p-10" aria-labelledby="cta">
+          <section className="rounded-[var(--radius-card)] bg-navy-band p-8 text-white sm:p-10" aria-labelledby="cta">
             <h2 id="cta" className="text-3xl font-extrabold !text-white">Ready to compete in {c.name}?</h2>
             <p className="mt-3 text-slate-300">{event.dates.display} · {event.city}, {event.country} · Venue to be announced</p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3 max-sm:[&>*]:w-full max-sm:[&>*]:whitespace-normal">
               <Link href={registerLanding(c.slug)} className="btn btn-gold">Register for This Category <ArrowIcon /></Link>
               <a href={categoryPdfPath(c.slug)} className="btn btn-ghost-light" download><DownloadIcon /> Information sheet (PDF)</a>
             </div>

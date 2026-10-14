@@ -37,7 +37,7 @@ export function Countdown() {
           ["Hours", hours],
           ["Minutes", mins],
         ].map(([label, v]) => (
-          <div key={label as string} className="flex min-w-[4.75rem] flex-col-reverse rounded-2xl border border-white/10 bg-white/5 px-3 py-3 text-center">
+          <div key={label as string} className="flex min-w-[4.75rem] flex-col-reverse rounded-md border border-white/10 bg-white/5 px-3 py-3 text-center">
             <dt className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">{label}</dt>
             <dd className="font-display text-3xl font-extrabold tabular-nums text-white">{String(v).padStart(2, "0")}</dd>
           </div>

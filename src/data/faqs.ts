@@ -51,7 +51,7 @@ export const faqs: Faq[] = [
     group: "Registration",
     home: true,
     q: "How do we register?",
-    a: "Use the Register a Team button. It takes you to the official MRC Ghana 2027 registration application, where you choose your sports and submit your team details.",
+    a: "Use the Register a Team button. It takes you to the official MRC Ghana 2027 registration application, where you sign in with your email, add your organisation, team and robot details, and submit an expression of interest. The MakersPlace then reviews each entry against the current H.E.R.O. rules and contacts you.",
   },
   {
     group: "Registration",

@@ -31,13 +31,13 @@ export default function ProgrammePage() {
                   <ol className="mt-6 divide-y divide-line">
                     {items.map((it) => (
                       <li key={it.time + it.title} className="flex gap-5 py-3">
-                        <span className="w-16 shrink-0 font-display font-bold tabular-nums text-gold-700">{it.time}</span>
+                        <span className="w-16 shrink-0 font-display font-bold tabular-nums text-green-700">{it.time}</span>
                         <span><span className="font-semibold text-navy-950">{it.title}</span>{it.detail && <span className="block text-muted">{it.detail}</span>}</span>
                       </li>
                     ))}
                   </ol>
                 ) : (
-                  <p className="mt-6 rounded-xl border border-dashed border-gold-500/60 bg-[#fbf6e8] px-4 py-3 font-medium text-navy-950">Schedule pending — the timetable for this day will be published once approved.</p>
+                  <p className="mt-6 rounded-md border border-dashed border-gold-500/60 bg-gold-soft px-4 py-3 font-medium text-navy-950">Schedule pending — the timetable for this day will be published once approved.</p>
                 )}
               </section>
             );

@@ -4,7 +4,8 @@ Source code for **www.mrcghana.com**, the website of the **Minoan RobotSports Co
 (30–31 January 2027, Accra, Ghana · venue to be announced), organised in Ghana by **The MakersPlace**
 with the international programme of the **Hellenic Educational Robotics Organization (H.E.R.O.)**.
 
-Built with Next.js 15 (App Router), React 19, TypeScript and Tailwind CSS 4. All public pages are
+Built with Next.js 15 (App Router), React 19, TypeScript and Tailwind CSS 4. The visual theme matches the
+registration app at https://mrcghana2027.lovable.app (tokens in `src/app/globals.css`). All public pages are
 statically generated; the only server code is the enquiry form endpoint.
 
 ## Quick start

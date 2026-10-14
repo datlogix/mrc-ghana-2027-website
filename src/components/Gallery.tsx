@@ -111,7 +111,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               width={current.width}
               height={current.height}
               sizes="100vw"
-              className="mx-auto max-h-[80dvh] w-auto rounded-xl object-contain"
+              className="mx-auto max-h-[80dvh] w-auto rounded-md object-contain"
             />
             <p className="mt-3 text-center text-white">
               {current.caption} <span className="text-slate-400">· {current.event.name}, {current.event.location}</span>

@@ -31,13 +31,13 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-5">
             <div className="card p-7">
-              <p className="text-sm font-bold uppercase tracking-[0.14em] text-gold-700">Ghana organiser</p>
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-green-700">Ghana organiser</p>
               <h3 className="mt-2 text-2xl font-bold">{event.organisers.ghana.name}</h3>
               <p className="mt-2 text-muted">Organiser of {event.shortName} in {event.city}.</p>
               <ExternalLink href={event.organisers.ghana.url} className="mt-3 inline-block font-semibold text-navy-700 underline underline-offset-4">makersplacegh.com</ExternalLink>
             </div>
             <div className="card p-7">
-              <p className="text-sm font-bold uppercase tracking-[0.14em] text-gold-700">International organiser</p>
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-green-700">International organiser</p>
               <h3 className="mt-2 text-2xl font-bold">{event.organisers.international.name} ({event.organisers.international.abbreviation})</h3>
               <p className="mt-2 text-muted">A non-profit organisation based in Heraklion, Crete, Greece, which organises the Minoan RobotSports Competition Global Olympiad and publishes the official MRC rules.</p>
               <ExternalLink href={event.organisers.international.mrcUrl} className="mt-3 inline-block font-semibold text-navy-700 underline underline-offset-4">he-ro.gr</ExternalLink>

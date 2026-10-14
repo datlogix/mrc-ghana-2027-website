@@ -199,7 +199,7 @@ export function EnquiryForm({ kind, fallbackEmail, defaultProspectus = false }: 
 
       <div ref={statusRef} tabIndex={-1} aria-live="polite">
         {status.state === "error" && (
-          <div role="alert" className="rounded-xl border border-[#b42318]/40 bg-[#fdf2f1] p-4 text-[#7a1a12]">
+          <div role="alert" className="rounded-md border border-[#b42318]/40 bg-[#fdf2f1] p-4 text-[#7a1a12]">
             <p className="font-semibold">{status.message}</p>
             {status.fallback && (
               <p className="mt-1">

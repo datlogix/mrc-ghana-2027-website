@@ -56,7 +56,7 @@ export function VideoEmbed({ video, priority = false }: { video: Video; priority
       <figcaption className="p-5">
         <p className="font-display text-lg font-bold text-navy-950">{video.displayTitle}</p>
         {video.event && (
-          <p className="mt-1 text-sm font-semibold text-gold-700">
+          <p className="mt-1 text-sm font-semibold text-green-700">
             {video.event.name} · {video.event.location}
           </p>
         )}

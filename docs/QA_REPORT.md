@@ -1,6 +1,6 @@
 # QA report — MRC Ghana 2027 website
 
-**Build tested:** local production build (`next build` + `next start`), 14 October 2026.
+**Build tested:** local production build (`next build` + `next start`), 14 October 2026. Re-themed to match the registration app the same day.
 **Status:** ready for staging review. **Not yet production-ready.** The external dependencies in §3 must be resolved first.
 
 ## 1. Acceptance criteria
@@ -17,7 +17,7 @@
 | 8 | Videos have verified destinations and accurate labels | ✅ | 14 videos verified via oEmbed (title, uploader, date, embeddable); privacy-enhanced embed loads on click |
 | 9 | Past event materials have verified dates and sources | ✅ | Olympiad 2025/2026 videos labelled "Greece", explicitly not Ghana |
 | 10 | Gallery works on mobile | ⚠️ Partly | Gallery, filters and lightbox are built. **No authorised photos exist yet**, so the page shows the "being curated" state. Lightbox to be re-tested with the first real photos |
-| 11 | Lovable registration journey works | ⛔ Blocked | Registration URL not yet supplied (see §3) |
+| 11 | Lovable registration journey works | ⚠️ Partly | Website → `/register` → `mrcghana2027.lovable.app/register` → sign-in page verified. Form submission → confirmation not run: it would create a real record. Needs an agreed test entry (see LOVABLE_INTEGRATION.md) |
 | 12 | Sponsorship enquiries reach the approved destination | ⚠️ Partly | Endpoint verified end-to-end against a mock webhook (all fields delivered). Needs production mailbox + Resend key or webhook |
 | 13 | No fabricated sponsors or unconfirmed venue | ✅ | Partner wall hidden (0 approved); venue TBA |
 | 14 | No travel-funding or qualification guarantees | ✅ | Explicit disclaimers; build scan for guarantee language |
@@ -58,15 +58,16 @@ Re-run on the staging URL (real CDN) for final figures.
 
 | # | Dependency | Who | Notes |
 |---|---|---|---|
-| D1 | **Published URL of the existing Lovable registration app** | Owner | Set `NEXT_PUBLIC_REGISTRATION_URL`; then run the end-to-end test in LOVABLE_INTEGRATION.md |
+| D1 | ~~Lovable URL~~ resolved (`mrcghana2027.lovable.app`). **End-to-end test submission** still needed | Owner | Agree a clearly marked test entry, submit, confirm the single record, delete it |
 | D2 | **Possible lost registrations on the current site** | Owner | The current homepage form appears to save only in the visitor's browser. Check with the teams |
 | D3 | Lovable app updates (seven sports, age-based eligibility, branding, back-link) | Owner / Lovable maintainer | Checklist in LOVABLE_INTEGRATION.md |
 | D4 | Enquiry delivery: approved mailbox + Resend API key (domain verified) or webhook | Owner | Environment variables only |
 | D5 | Vercel access: import the repo, set env vars, create staging | Vercel account owner | `docs/DEPLOYMENT.md` §3 |
 | D6 | Source repo of the current mrcghana.com | Vercel account owner | For archival/rollback records |
 | D7 | Authorised photographs + consent records | Organisers | `src/data/gallery.ts` |
-| D8 | Official logo files and permission (MRC / H.E.R.O. / The MakersPlace) | Organisers | The site uses an original typographic mark until then |
-| D9 | Hero photo/video (licensed) | Organisers | The hero currently uses an original abstract illustration |
+| D8 | Official logo files and permission (MRC / H.E.R.O. / The MakersPlace) | Organisers | The site uses an original typographic mark in the registration app's style until then |
+| D12 | Exhibition team size | Organisers | The app says 1–3 members; the official H.E.R.O. page publishes none. The website shows "TBC" |
+| D9 | Hero photo licence | Organisers | The hero reuses `robotics-lab.jpg` from the Lovable app. Confirm its licence/source (it is illustrative, not event footage) |
 | D10 | Social media account URLs | Organisers | `event.contact.social` (only verified accounts) |
 | D11 | Verified Exhibition video | Organisers | Slot intentionally empty |
 

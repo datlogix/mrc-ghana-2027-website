@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { event, siteUrl } from "@/config/event";
 import { eventJsonLd } from "@/lib/seo";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans", display: "swap", weight: ["400", "500", "600", "700"] });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap", weight: ["600", "700", "800"] });
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#070f22",
+  themeColor: "#0a2b44",
   width: "device-width",
   initialScale: 1,
 };
@@ -32,7 +32,7 @@ const plausible = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${inter.variable} ${manrope.variable}`}>
+    <html lang="en-GB" className={`${dmSans.variable} ${manrope.variable}`}>
       <body>
         <Header />
         <main id="main" tabIndex={-1} className="focus:outline-none">

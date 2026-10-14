@@ -1,36 +1,45 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens — matched to the MRC Ghana 2027 registration app
+ * (https://mrcghana2027.lovable.app): brand navy, gold and green,
+ * DM Sans body text, Manrope headings, 0.5rem radius.
+ */
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 
-  /* Midnight / navy */
-  --color-ink: #070f22;
-  --color-navy-950: #081329;
-  --color-navy-900: #0b1a36;
-  --color-navy-800: #112449;
-  --color-navy-700: #1a3263;
-  --color-navy-600: #284682;
+  /* Brand navy (oklch 27.9% .06 246) and its tints/shades */
+  --color-ink: #031c30; /* hero overlay start */
+  --color-navy-950: #0a2b44; /* brand navy — headings, dark bands */
+  --color-navy-900: #0a2b44;
+  --color-navy-800: #0f3656;
+  --color-navy-700: #164368;
+  --color-navy-600: #1f5480;
 
-  /* Gold accents */
-  --color-gold-300: #ecd79c;
-  --color-gold-400: #dcbc68;
-  --color-gold-500: #c9a24a;
-  --color-gold-700: #7a5c14; /* gold text on white — AA */
+  /* Brand gold (oklch 74.2% .145 84) */
+  --color-gold-300: #f0d48a;
+  --color-gold-400: #e3b542;
+  --color-gold-500: #d6a21f;
+  --color-gold-600: #c08f12;
+  --color-gold-soft: #fbf3db;
+
+  /* Brand green (oklch 46.7% .092 164) — eyebrows, focus, accents */
+  --color-green-700: #156a4c;
+  --color-green-600: #1b7d5a;
+  --color-green-soft: #e2f6ec;
 
   /* Surfaces & text */
   --color-paper: #ffffff;
-  --color-mist: #f4f6fb;
-  --color-line: #e3e8f1;
-  --color-body: #334155;
-  --color-muted: #5b6577;
+  --color-mist: #f0f6fa; /* muted section background */
+  --color-secondary: #ecf3f8;
+  --color-line: #dbe2e9; /* border */
+  --color-input: #c5cfd8;
+  --color-body: #233f56;
+  --color-muted: #55626e;
 
-  /* Ghana accents — used sparingly in thin details */
-  --color-gh-red: #ce1126;
-  --color-gh-gold: #fcd116;
-  --color-gh-green: #006b3f;
-
-  --radius-card: 1.25rem;
+  --radius-card: 0.625rem;
+  --radius-btn: 0.5rem;
 }
 
 @layer base {
@@ -60,11 +69,11 @@
   }
   p { text-wrap: pretty; }
   :focus-visible {
-    outline: 3px solid var(--color-gold-500);
+    outline: 2px solid var(--color-green-700);
     outline-offset: 3px;
-    border-radius: 6px;
+    border-radius: 4px;
   }
-  ::selection { background: var(--color-gold-300); color: var(--color-ink); }
+  ::selection { background: var(--color-gold-soft); color: var(--color-navy-950); }
 }
 
 @layer components {
@@ -73,74 +82,77 @@
   @media (min-width: 1024px) { .container-x { padding-inline: 2rem; } }
 
   .eyebrow {
-    display: inline-flex; align-items: center; gap: .6rem;
-    font-size: .8125rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--color-gold-700);
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--color-green-700);
   }
-  .eyebrow::before { content: ""; width: 1.75rem; height: 2px; background: currentColor; border-radius: 2px; }
-  .on-dark .eyebrow, .eyebrow.on-dark { color: var(--color-gold-400); }
+  .on-dark .eyebrow, .eyebrow.on-dark { color: #fff; }
+  .on-dark .eyebrow::before, .eyebrow.on-dark::before {
+    content: ""; width: .5rem; height: .5rem; background: var(--color-gold-500);
+  }
 
   .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-    min-height: 3rem; padding: .75rem 1.4rem; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+    min-height: 3rem; padding: .75rem 1.35rem; border-radius: var(--radius-btn);
     font-weight: 600; font-size: 1rem; line-height: 1.2; white-space: nowrap;
-    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
   }
-  .btn:hover { transform: translateY(-1px); }
-  .btn-gold { background: var(--color-gold-500); color: var(--color-ink); box-shadow: 0 10px 30px -12px rgb(201 162 74 / .7); }
+  .btn-gold { background: var(--color-gold-500); color: var(--color-navy-950); }
   .btn-gold:hover { background: var(--color-gold-400); }
-  .btn-navy { background: var(--color-navy-900); color: #fff; }
+  .btn-navy { background: var(--color-navy-950); color: #fff; }
   .btn-navy:hover { background: var(--color-navy-700); }
-  .btn-ghost-light { border: 1.5px solid rgb(255 255 255 / .35); color: #fff; }
-  .btn-ghost-light:hover { border-color: #fff; background: rgb(255 255 255 / .08); }
-  .btn-outline { border: 1.5px solid var(--color-navy-900); color: var(--color-navy-900); }
-  .btn-outline:hover { background: var(--color-navy-900); color: #fff; }
+  .btn-ghost-light { border: 1px solid rgb(255 255 255 / .55); color: #fff; background: rgb(3 28 48 / .2); }
+  .btn-ghost-light:hover { border-color: #fff; background: rgb(255 255 255 / .1); }
+  .btn-outline { border: 1px solid var(--color-input); color: var(--color-navy-950); background: #fff; }
+  .btn-outline:hover { border-color: var(--color-navy-950); }
 
   .card {
     background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius-card);
-    box-shadow: 0 1px 2px rgb(8 19 41 / .04), 0 12px 32px -18px rgb(8 19 41 / .18);
+    box-shadow: 0 8px 32px rgb(10 43 68 / .06);
   }
-  .card-hover { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-  .card-hover:hover { transform: translateY(-3px); border-color: var(--color-gold-400); box-shadow: 0 2px 4px rgb(8 19 41 / .05), 0 24px 48px -20px rgb(8 19 41 / .28); }
+  .card-hover { transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+  .card-hover:hover { border-color: var(--color-green-700); box-shadow: 0 12px 36px rgb(10 43 68 / .1); transform: translateY(-2px); }
+
+  .icon-tile { display: inline-flex; align-items: center; justify-content: center; border-radius: .5rem; }
+  .tile-green { background: var(--color-green-soft); color: var(--color-green-700); }
+  .tile-gold { background: var(--color-gold-soft); color: #9a6f00; }
+  .tile-blue { background: var(--color-secondary); color: var(--color-navy-700); }
 
   .prose-mrc p { margin-block: 0 1rem; }
   .prose-mrc ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .65rem; }
-  .prose-mrc li { position: relative; padding-left: 1.6rem; }
+  .prose-mrc li { position: relative; padding-left: 1.5rem; }
   .prose-mrc li::before {
-    content: ""; position: absolute; left: .2rem; top: .7em; width: .5rem; height: .5rem;
-    border-radius: 2px; transform: rotate(45deg); background: var(--color-gold-500);
+    content: ""; position: absolute; left: .15rem; top: .68em; width: .45rem; height: .45rem;
+    background: var(--color-gold-500);
   }
 
   .field-label { display: block; font-weight: 600; color: var(--color-navy-950); margin-bottom: .4rem; }
   .field {
     width: 100%; min-height: 3rem; padding: .7rem .9rem; font-size: 1rem; color: var(--color-navy-950);
-    background: #fff; border: 1.5px solid #c8d0de; border-radius: .75rem; transition: border-color .15s, box-shadow .15s;
+    background: #fff; border: 1px solid var(--color-input); border-radius: var(--radius-btn); transition: border-color .15s, box-shadow .15s;
   }
-  .field:focus { outline: none; border-color: var(--color-navy-600); box-shadow: 0 0 0 4px rgb(40 70 130 / .15); }
+  .field:focus { outline: none; border-color: var(--color-green-700); box-shadow: 0 0 0 3px rgb(21 106 76 / .18); }
   .field[aria-invalid="true"] { border-color: #b42318; }
   .field-error { color: #b42318; font-size: .9375rem; margin-top: .35rem; }
 
-  .kente {
+  /* Brand stripe: green · gold · navy (as on the registration app) */
+  .brand-stripe {
     height: 4px;
     background: linear-gradient(90deg,
-      var(--color-gh-red) 0 33.33%, var(--color-gh-gold) 33.33% 66.66%, var(--color-gh-green) 66.66% 100%);
+      var(--color-green-700) 0 33.33%, var(--color-gold-500) 33.33% 66.66%, var(--color-navy-950) 66.66% 100%);
   }
 
-  .bg-midnight {
-    background-color: var(--color-ink);
-    background-image:
-      radial-gradient(60rem 30rem at 85% -10%, rgb(40 70 130 / .55), transparent 60%),
-      radial-gradient(40rem 24rem at -10% 110%, rgb(201 162 74 / .12), transparent 60%);
+  /* Flat brand-navy band */
+  .bg-navy-band { background-color: var(--color-navy-950); }
+  /* Photo hero overlay (left-to-right navy fade) */
+  .hero-overlay {
+    background: linear-gradient(90deg, rgb(3 28 48 / .96) 0%, rgb(10 35 56 / .86) 30%, rgb(10 35 56 / .25) 62%, transparent 100%);
   }
-  .grid-lines {
-    background-image:
-      linear-gradient(rgb(255 255 255 / .045) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(255 255 255 / .045) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  @media (max-width: 767px) {
+    .hero-overlay { background: linear-gradient(180deg, rgb(3 28 48 / .82) 0%, rgb(3 28 48 / .92) 60%, rgb(3 28 48 / .96) 100%); }
   }
 }
 
-@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-.animate-rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
-.delay-1 { animation-delay: .08s; } .delay-2 { animation-delay: .16s; } .delay-3 { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.animate-rise { animation: rise .6s cubic-bezier(.2,.7,.2,1) both; }
+.delay-1 { animation-delay: .06s; } .delay-2 { animation-delay: .12s; } .delay-3 { animation-delay: .18s; }

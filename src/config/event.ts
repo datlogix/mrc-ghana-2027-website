@@ -92,13 +92,14 @@ export const event = {
    * fallback below once the published URL is confirmed.
    */
   registration: {
-    url: process.env.NEXT_PUBLIC_REGISTRATION_URL || "",
+    /** Existing Lovable app: https://mrcghana2027.lovable.app — /register requires a passwordless email sign-in. */
+    url: process.env.NEXT_PUBLIC_REGISTRATION_URL || "https://mrcghana2027.lovable.app/register",
     /** "open" | "opening-soon" | "closed". Controls button labels and messaging. */
     status: "open" as "open" | "opening-soon" | "closed",
     /**
-     * Query parameter the Lovable app accepts for pre-selecting a category,
-     * e.g. "category". Leave null unless the Lovable app has been confirmed
-     * to support it — otherwise buttons link to the general registration start.
+     * Query parameter the Lovable app accepts for pre-selecting a category.
+     * Checked 2026-10-14: the app's /register route only accepts ?id=<draft uuid>,
+     * so this stays null and buttons link to the general registration start.
      */
     categoryParam: null as string | null,
     /** Fee and deadline: leave null until approved. */

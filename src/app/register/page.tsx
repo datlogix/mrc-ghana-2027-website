@@ -29,11 +29,11 @@ export default function RegisterPage() {
               {[
                 ["Choose your sport(s)", <>Check the <Link href="/categories" className="font-semibold text-navy-700 underline underline-offset-4">seven categories</Link> and their age bands.</>],
                 ["Read the official rules", "Each category page links to its official H.E.R.O. rules."],
-                ["Have your team details ready", "Team name, members, coach details and your chosen sports. Coaches must be at least 20 years old."],
-                ["Check consent requirements", "A parent or guardian consent form may be required for participants under 18. The organisers will confirm."],
+                ["Have your team details ready", "Organisation details, coach and team members (including dates of birth), guardian details and consent for every minor, and robot and emergency-contact details. Coaches must be at least 20 years old."],
+                ["Expect an eligibility review", "Registration is an expression of interest. The MakersPlace reviews each entry against the current H.E.R.O. rules and contacts you about the outcome."],
               ].map(([t, b], i) => (
                 <li key={i} className="flex gap-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-950 font-display font-bold text-gold-400">{i + 1}</span>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-green-soft font-display font-bold text-green-700">{i + 1}</span>
                   <div><p className="font-semibold text-navy-950">{t}</p><p className="text-muted">{b}</p></div>
                 </li>
               ))}

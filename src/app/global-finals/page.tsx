@@ -23,7 +23,7 @@ export default function GlobalFinalsPage() {
       <Section>
         <div className="grid gap-6 md:grid-cols-2">
           <section className="card p-7" aria-labelledby="gh">
-            <p className="text-sm font-bold uppercase tracking-[0.14em] text-gold-700">National competition</p>
+            <p className="text-sm font-bold uppercase tracking-[0.14em] text-green-700">National competition</p>
             <h2 id="gh" className="mt-2 text-2xl font-bold">{event.shortName}</h2>
             <dl className="mt-5 space-y-3">
               <div><dt className="font-semibold text-navy-950">Dates</dt><dd>{event.dates.display}</dd></div>

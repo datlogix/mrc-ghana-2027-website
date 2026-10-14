@@ -36,7 +36,7 @@ export default function FaqPage() {
                     <details key={f.q} className="group py-5">
                       <summary className="flex cursor-pointer list-none items-start justify-between gap-6 font-display text-lg font-bold text-navy-950">
                         {f.q}
-                        <span className="mt-1 text-gold-700 transition-transform group-open:rotate-45" aria-hidden>+</span>
+                        <span className="mt-1 text-green-700 transition-transform group-open:rotate-45" aria-hidden>+</span>
                       </summary>
                       <p className="mt-3 text-muted">{f.a}</p>
                     </details>

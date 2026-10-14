@@ -21,8 +21,8 @@ export default function PartnersPage() {
       >
         <div className="flex flex-wrap gap-3">
           <a href="#enquire" className="btn btn-gold">Become a Sponsor</a>
-          <a href="#opportunities" className="btn btn-ghost-light">Explore Partnership Opportunities</a>
-          <a href="#enquire" className="btn btn-ghost-light">Request the Sponsorship Prospectus</a>
+          <a href="#opportunities" className="btn btn-outline">Explore Partnership Opportunities</a>
+          <a href="#enquire" className="btn btn-outline">Request the Sponsorship Prospectus</a>
         </div>
       </PageHero>
 
@@ -31,7 +31,7 @@ export default function PartnersPage() {
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {partnershipAreas.map((a, i) => (
             <li key={a.title} className="card p-6">
-              <span className="font-display text-sm font-extrabold tracking-[0.2em] text-gold-700">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-display text-sm font-extrabold tracking-[0.2em] text-green-700">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="mt-2 text-lg font-bold">{a.title}</h3>
               <p className="mt-2 text-[0.98rem] text-muted">{a.body}</p>
             </li>

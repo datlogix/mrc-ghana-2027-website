@@ -75,3 +75,6 @@ export function CategoryIcon({ slug, className = "h-10 w-10" }: { slug: Category
       );
   }
 }
+
+/** Soft tinted tile colour for each category (cycles green · gold · blue, as on the registration app). */
+export const tileClass = (index: number) => ["tile-green", "tile-gold", "tile-blue"][index % 3];

@@ -17,18 +17,17 @@ import { event } from "../src/config/event";
 const OUT = path.join(process.cwd(), "public", "downloads", "categories");
 const SITE = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.mrcghana.com").replace(/\/$/, "");
 
+// Brand palette — matches the website and the registration app.
 const C = {
-  ink: "#070f22",
-  navy: "#0b1a36",
-  gold: "#c9a24a",
-  goldText: "#7a5c14",
-  body: "#1f2a3d",
-  muted: "#4a5568",
-  line: "#d9dfea",
-  mist: "#f3f5fa",
-  red: "#ce1126",
-  ghGold: "#fcd116",
-  green: "#006b3f",
+  ink: "#031c30",
+  navy: "#0a2b44",
+  gold: "#d6a21f",
+  goldSoft: "#fbf3db",
+  green: "#156a4c",
+  body: "#233f56",
+  muted: "#55626e",
+  line: "#dbe2e9",
+  mist: "#f0f6fa",
 };
 
 const PAGE = { w: 595.28, h: 841.89, m: 50 };
@@ -83,7 +82,7 @@ async function build(c: Category) {
     ensureSpace(95); // keep headings with at least their first lines
     doc.moveDown(0.8);
     const y = doc.y;
-    artifact(() => doc.rect(PAGE.m, y + 3, 4, 15).fill(C.gold));
+    artifact(() => doc.rect(PAGE.m, y + 3, 4, 15).fill(C.green));
     root.add(
       struct("H2", () => {
         doc.font("Helvetica-Bold").fontSize(15).fillColor(C.navy).text(text, PAGE.m + 14, y, { width: contentW - 14 });
@@ -112,7 +111,7 @@ async function build(c: Category) {
       const y = doc.y;
       artifact(() => {
         if (marker === "check") doc.lineWidth(1.2).roundedRect(PAGE.m + 1, y + 1.5, 10, 10, 2).stroke(C.navy);
-        else doc.save().translate(PAGE.m + 5, y + 7).rotate(45).rect(-2.6, -2.6, 5.2, 5.2).fill(C.gold).restore();
+        else doc.rect(PAGE.m + 2.5, y + 4.5, 5, 5).fill(C.gold);
       });
       L.add(
         struct("LI", [
@@ -171,8 +170,8 @@ async function build(c: Category) {
     ensureSpace(h + 8);
     const y = doc.y;
     artifact(() => {
-      doc.rect(PAGE.m, y, contentW, h).fill(tone === "gold" ? "#fbf6e8" : C.mist);
-      doc.rect(PAGE.m, y, 4, h).fill(tone === "gold" ? C.gold : C.navy);
+      doc.rect(PAGE.m, y, contentW, h).fill(tone === "gold" ? C.goldSoft : C.mist);
+      doc.rect(PAGE.m, y, 4, h).fill(tone === "gold" ? C.gold : C.green);
     });
     root.add(struct("P", () => {
       doc.font("Helvetica-Bold").fontSize(BODY).fillColor(C.navy).text(title, PAGE.m + 16, y + 12, { width: contentW - 32 });
@@ -187,23 +186,23 @@ async function build(c: Category) {
   // ── Cover band ──
   const bandH = 205;
   artifact(() => {
-    doc.rect(0, 0, PAGE.w, bandH).fill(C.ink);
+    doc.rect(0, 0, PAGE.w, bandH).fill(C.navy);
     const sw = PAGE.w / 3;
-    doc.rect(0, bandH, sw, 5).fill(C.red);
-    doc.rect(sw, bandH, sw, 5).fill(C.ghGold);
-    doc.rect(sw * 2, bandH, sw, 5).fill(C.green);
+    doc.rect(0, 0, sw, 5).fill(C.green);
+    doc.rect(sw, 0, sw, 5).fill(C.gold);
+    doc.rect(sw * 2, 0, sw, 5).fill(C.ink);
     // emblem
     doc.roundedRect(PAGE.m, 44, 30, 30, 8).fill(C.gold);
   });
   root.add(struct("P", () => {
     doc.font("Helvetica-Bold").fontSize(13).fillColor("#ffffff").text("MRC GHANA 2027", PAGE.m + 42, 48, { characterSpacing: 1.5 });
-    doc.font("Helvetica").fontSize(10.5).fillColor("#ecd79c").text("CATEGORY INFORMATION SHEET", PAGE.m + 42, 64, { characterSpacing: 1.2 });
+    doc.font("Helvetica").fontSize(10.5).fillColor("#f0d48a").text("CATEGORY INFORMATION SHEET", PAGE.m + 42, 64, { characterSpacing: 1.2 });
   }));
   root.add(struct("H1", () => {
     doc.font("Helvetica-Bold").fontSize(34).fillColor("#ffffff").text(c.name, PAGE.m, 100, { width: contentW });
   }));
   root.add(struct("P", () => {
-    doc.font("Helvetica").fontSize(13).fillColor("#ecd79c").text(c.strapline, PAGE.m, doc.y + 2, { width: contentW });
+    doc.font("Helvetica").fontSize(13).fillColor("#f0d48a").text(c.strapline, PAGE.m, doc.y + 2, { width: contentW });
     doc.font("Helvetica").fontSize(BODY).fillColor("#d6dbe6")
       .text(`${event.dates.display}  ·  ${event.city}, ${event.country}  ·  Venue to be announced`, PAGE.m, doc.y + 10, { width: contentW });
   }));
@@ -283,7 +282,7 @@ async function build(c: Category) {
     doc.font("Helvetica-Bold").fontSize(BODY).fillColor(C.navy).text("Official H.E.R.O. rules", tx, y + 4, { width: tw });
   }));
   root.add(struct("Link", () => {
-    doc.font("Helvetica").fontSize(BODY).fillColor("#1a3263").text(c.rulesUrl, tx, doc.y + 2, { width: tw, link: c.rulesUrl, underline: true });
+    doc.font("Helvetica").fontSize(BODY).fillColor(C.green).text(c.rulesUrl, tx, doc.y + 2, { width: tw, link: c.rulesUrl, underline: true });
   }));
   root.add(struct("P", () => {
     doc.font("Helvetica").fontSize(BODY).fillColor(C.body)

@@ -105,15 +105,16 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled || mobileOpen ? "bg-ink/95 backdrop-blur shadow-[0_8px_30px_-12px_rgba(0,0,0,.5)]" : "bg-ink"
+      className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
+        scrolled || mobileOpen ? "shadow-[0_6px_24px_rgba(10,43,68,.08)]" : ""
       }`}
     >
+      <div className="brand-stripe" aria-hidden />
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] btn btn-gold">
         Skip to main content
       </a>
-      <div className="container-x flex h-[4.5rem] items-center justify-between gap-3">
-        <Link href="/" className="flex items-center gap-3 text-white" aria-label={`${event.shortName} — home`}>
+      <div className="container-x flex h-[5.25rem] items-center justify-between gap-3">
+        <Link href="/" className="flex items-center gap-3" aria-label={`${event.shortName} — home`}>
           <Logo />
         </Link>
 
@@ -121,8 +122,8 @@ export function Header() {
           <ul className="flex items-center gap-1">
             {nav.map((item) => {
               const active = isActive(pathname, item);
-              const base = `inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[0.95rem] font-medium transition-colors ${
-                active ? "text-gold-300" : "text-slate-200 hover:text-white"
+              const base = `relative inline-flex items-center gap-1 px-3 py-2 text-[0.95rem] font-medium text-navy-950 transition-colors hover:text-green-700 after:absolute after:inset-x-3 after:-bottom-1.5 after:h-0.5 after:bg-green-700 after:transition-opacity ${
+                active ? "after:opacity-100" : "after:opacity-0"
               }`;
               if (!item.children)
                 return (
@@ -149,20 +150,20 @@ export function Header() {
                   <div
                     id={id}
                     hidden={!open}
-                    className="absolute left-1/2 top-full mt-3 w-72 -translate-x-1/2 rounded-2xl border border-white/10 bg-navy-900 p-2 shadow-2xl"
+                    className="absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 rounded-[var(--radius-card)] border border-line bg-white p-2 shadow-[0_16px_40px_rgba(10,43,68,.14)]"
                   >
                     <ul>
                       {item.children.map((c) => (
                         <li key={c.href}>
                           <Link
                             href={c.href}
-                            className={`block rounded-xl px-3.5 py-2.5 transition-colors hover:bg-white/5 ${
-                              pathname === c.href ? "text-gold-300" : "text-slate-100"
+                            className={`block rounded-md px-3.5 py-2.5 transition-colors hover:bg-mist ${
+                              pathname === c.href ? "text-green-700" : "text-navy-950"
                             }`}
                             aria-current={pathname === c.href ? "page" : undefined}
                           >
                             <span className="block font-medium">{c.label}</span>
-                            {c.note && <span className="block text-sm text-slate-400">{c.note}</span>}
+                            {c.note && <span className="block text-sm text-muted">{c.note}</span>}
                           </Link>
                         </li>
                       ))}
@@ -182,7 +183,7 @@ export function Header() {
           <button
             ref={menuButtonRef}
             type="button"
-            className="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-white hover:bg-white/10"
+            className="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-navy-950 hover:bg-mist"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             onClick={() => setMobileOpen((o) => !o)}
@@ -198,7 +199,7 @@ export function Header() {
       <div
         id="mobile-nav"
         hidden={!mobileOpen}
-        className="xl:hidden fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto bg-ink border-t border-white/10"
+        className="xl:hidden fixed inset-x-0 top-[calc(5.25rem+4px)] bottom-0 overflow-y-auto bg-white border-t border-line"
       >
         <nav aria-label="Mobile" className="container-x py-6">
           <ul className="space-y-1">
@@ -206,16 +207,16 @@ export function Header() {
               <li key={item.label}>
                 {item.children ? (
                   <details className="group" open={isActive(pathname, item)}>
-                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-xl px-3 py-3 text-lg font-semibold text-white hover:bg-white/5">
+                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-3 text-lg font-semibold text-navy-950 hover:bg-mist">
                       {item.label}
-                      <span className="text-slate-400 group-open:rotate-180 transition-transform"><Chevron open={false} /></span>
+                      <span className="text-muted group-open:rotate-180 transition-transform"><Chevron open={false} /></span>
                     </summary>
-                    <ul className="mb-2 ml-3 border-l border-white/10 pl-3">
+                    <ul className="mb-2 ml-3 border-l border-line pl-3">
                       {item.children.map((c) => (
                         <li key={c.href}>
                           <Link
                             href={c.href}
-                            className={`block rounded-lg px-3 py-2.5 ${pathname === c.href ? "text-gold-300" : "text-slate-200"} hover:bg-white/5`}
+                            className={`block rounded-md px-3 py-2.5 ${pathname === c.href ? "text-green-700" : "text-body"} hover:bg-mist`}
                             aria-current={pathname === c.href ? "page" : undefined}
                           >
                             {c.label}
@@ -227,7 +228,7 @@ export function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`block rounded-xl px-3 py-3 text-lg font-semibold ${pathname === item.href ? "text-gold-300" : "text-white"} hover:bg-white/5`}
+                    className={`block rounded-md px-3 py-3 text-lg font-semibold ${pathname === item.href ? "text-green-700" : "text-navy-950"} hover:bg-mist`}
                     aria-current={pathname === item.href ? "page" : undefined}
                   >
                     {item.label}
@@ -238,9 +239,9 @@ export function Header() {
           </ul>
           <div className="mt-8 grid gap-3">
             <Link href="/register" className="btn btn-gold w-full">Register a Team</Link>
-            <Link href="/partners" className="btn btn-ghost-light w-full">Become a Partner</Link>
+            <Link href="/partners" className="btn btn-outline w-full">Become a Partner</Link>
           </div>
-          <p className="mt-8 text-sm text-slate-400">
+          <p className="mt-8 text-sm text-muted">
             {event.dates.display} · {event.city}, {event.country}
           </p>
         </nav>

@@ -10,6 +10,7 @@ import { ArrowIcon, Breadcrumbs, DownloadIcon, ExternalIcon, ExternalLink, Notic
 import { formatDate } from "@/lib/format";
 import { pageMetadata } from "@/lib/seo";
 import { registerLanding } from "@/lib/registration";
+import { asset } from "@/lib/asset";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -74,7 +75,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
               <p className="mt-5 max-w-2xl text-lg text-muted">{c.summary}</p>
               <div className="mt-8 flex flex-wrap gap-3 max-sm:[&>*]:w-full max-sm:[&>*]:whitespace-normal">
                 <Link href={registerLanding(c.slug)} className="btn btn-gold">Register for This Category <ArrowIcon /></Link>
-                <a href={categoryPdfPath(c.slug)} className="btn btn-outline" download>
+                <a href={asset(categoryPdfPath(c.slug))} className="btn btn-outline" download>
                   <DownloadIcon /> Download Category Information (PDF)
                 </a>
                 <ExternalLink href={c.rulesUrl} className="btn btn-outline">
@@ -215,7 +216,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             <p className="mt-3 text-slate-300">{event.dates.display} · {event.city}, {event.country} · Venue to be announced</p>
             <div className="mt-6 flex flex-wrap gap-3 max-sm:[&>*]:w-full max-sm:[&>*]:whitespace-normal">
               <Link href={registerLanding(c.slug)} className="btn btn-gold">Register for This Category <ArrowIcon /></Link>
-              <a href={categoryPdfPath(c.slug)} className="btn btn-ghost-light" download><DownloadIcon /> Information sheet (PDF)</a>
+              <a href={asset(categoryPdfPath(c.slug))} className="btn btn-ghost-light" download><DownloadIcon /> Information sheet (PDF)</a>
             </div>
           </section>
 

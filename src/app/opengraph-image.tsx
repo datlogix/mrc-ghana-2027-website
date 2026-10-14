@@ -4,6 +4,7 @@ import { event } from "@/config/event";
 export const alt = `${event.shortName} — ${event.dates.display}, ${event.city}, ${event.country}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+export const dynamic = "force-static";
 
 export default function OgImage() {
   return new ImageResponse(

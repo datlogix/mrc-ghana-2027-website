@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { event, siteUrl } from "@/config/event";
 import { eventJsonLd } from "@/lib/seo";
+import { isStaticPreview } from "@/lib/asset";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans", display: "swap", weight: ["400", "500", "600", "700"] });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap", weight: ["600", "700", "800"] });
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
   verification: { google: "aeYWF4Wfi0rg5uo7gz-FIVtmJDUC1SApqrb_WYHCjMA" },
   formatDetection: { telephone: false },
+  ...(isStaticPreview ? { robots: { index: false, follow: false } } : {}),
 };
 
 export const viewport: Viewport = {
@@ -34,6 +36,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-GB" className={`${dmSans.variable} ${manrope.variable}`}>
       <body>
+        {isStaticPreview && (
+          <p className="bg-gold-soft px-4 py-2 text-center text-sm font-medium text-navy-950">
+            Test preview for review — not the live mrcghana.com. Online forms are switched off.
+          </p>
+        )}
         <Header />
         <main id="main" tabIndex={-1} className="focus:outline-none">
           {children}

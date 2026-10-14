@@ -4,6 +4,7 @@ import { categories } from "@/data/categories";
 import { CategoryIcon, tileClass } from "@/components/CategoryIcon";
 import { DownloadIcon, Notice, PageHero, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
+import { asset } from "@/lib/asset";
 
 export const metadata = pageMetadata({
   title: "Resources and Downloads",
@@ -33,7 +34,7 @@ export default function ResourcesPage() {
                   <h3 className="text-lg font-bold">{d.title}</h3>
                   <p className="mt-1 text-[0.98rem] text-muted">{d.description}</p>
                   <div className="mt-4 flex flex-wrap items-center gap-4">
-                    <a href={d.href} download className="btn btn-navy !min-h-11 !py-2 text-[0.95rem]"><DownloadIcon /> Download PDF</a>
+                    <a href={asset(d.href!)} download className="btn btn-navy !min-h-11 !py-2 text-[0.95rem]"><DownloadIcon /> Download PDF</a>
                     <Link href={`/categories/${c.slug}`} className="font-semibold text-navy-700 underline underline-offset-4">View page</Link>
                     <span className="text-sm text-muted">{d.format}</span>
                   </div>
@@ -57,7 +58,7 @@ export default function ResourcesPage() {
               </div>
               <p className="mt-2 text-[0.98rem] text-muted">{r.description}</p>
               <p className="mt-3 text-sm text-muted">For: {r.audience}</p>
-              {r.status === "published" && r.href && <a href={r.href} className="mt-4 inline-flex items-center gap-2 font-semibold text-navy-700 underline" download><DownloadIcon /> Download</a>}
+              {r.status === "published" && r.href && <a href={asset(r.href)} className="mt-4 inline-flex items-center gap-2 font-semibold text-navy-700 underline" download><DownloadIcon /> Download</a>}
             </li>
           ))}
         </ul>

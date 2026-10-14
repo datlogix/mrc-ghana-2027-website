@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { budgetRanges, partnershipAreas, partnershipTypes } from "@/data/partners";
+import { isStaticPreview } from "@/lib/asset";
 
 type Kind = "partner" | "contact";
 type Status = { state: "idle" } | { state: "sending" } | { state: "sent" } | { state: "error"; message: string; fallback?: boolean };
@@ -38,6 +39,10 @@ export function EnquiryForm({ kind, fallbackEmail, defaultProspectus = false }: 
     if (ts) data.turnstileToken = String(ts);
 
     setErrors({});
+    if (isStaticPreview) {
+      setStatus({ state: "error", message: "Online forms are switched off on this test preview. Please email us instead.", fallback: true });
+      return;
+    }
     setStatus({ state: "sending" });
     try {
       const res = await fetch("/api/enquiry", {

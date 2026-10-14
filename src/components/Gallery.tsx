@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { GalleryImage } from "@/data/gallery";
 import { categories } from "@/data/categories";
+import { asset } from "@/lib/asset";
 
 export function Gallery({ images }: { images: GalleryImage[] }) {
   const [cat, setCat] = useState<string>("all");
@@ -76,7 +77,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
             <figure className="card overflow-hidden">
               <button type="button" className="group block w-full" onClick={(e) => open(i, e.currentTarget)} aria-label={`Open photo: ${img.caption}`}>
                 <Image
-                  src={img.src}
+                  src={asset(img.src)}
                   alt={img.alt}
                   width={img.width}
                   height={img.height}
@@ -106,7 +107,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
         {current && (
           <div className="relative">
             <Image
-              src={current.src}
+              src={asset(current.src)}
               alt={current.alt}
               width={current.width}
               height={current.height}

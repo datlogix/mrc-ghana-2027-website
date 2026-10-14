@@ -22,7 +22,27 @@ Stay on **Vercel**. Domain and DNS are already there, Next.js is first-class, th
 
 **Important:** if the organisation is commercial, Vercel's Hobby plan terms may require a Pro plan. The organisers should confirm the plan with the Vercel account owner.
 
-## 3. Staging / preview deployment
+## 3a. Static test preview (live now)
+
+**https://datlogix.github.io/mrc-ghana-2027-preview/**: a static build for reviewers, hosted on GitHub Pages from the
+public repo `datlogix/mrc-ghana-2027-preview`. That repo holds generated files only; the source stays private.
+
+- A "Test preview" banner shows on every page. Search engines are told not to index it (`noindex` + `robots.txt` disallow).
+- Online forms are switched off, because Pages cannot run server code. Visitors see the email fallback instead.
+- Security headers and legacy redirects only apply on the Vercel build.
+- Register buttons go to the real registration app (`mrcghana2027.lovable.app`).
+
+Update it after changes:
+
+```bash
+scripts/build-preview.sh                   # builds ./out with base path /mrc-ghana-2027-preview
+cd out && git init -b main && git add -A && git commit -m "Update preview" \
+  && git push -f https://github.com/datlogix/mrc-ghana-2027-preview.git main
+```
+
+Take it down when Vercel staging exists: GitHub → `mrc-ghana-2027-preview` → Settings → Pages → Unpublish, or delete the repo.
+
+## 3. Staging / preview deployment (Vercel)
 
 1. In Vercel, **Add New → Project → Import Git Repository** → `mrc-ghana-2027-website`.
    - Framework: Next.js (auto-detected). Build command `npm run build`, output default, Node 20+ (22 recommended).

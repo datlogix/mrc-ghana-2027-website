@@ -12,6 +12,7 @@ import { VideoEmbed } from "@/components/VideoEmbed";
 import { ArrowIcon, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 import { homeSteps } from "@/data/steps";
+import { asset } from "@/lib/asset";
 
 export const metadata = pageMetadata({
   title: `${event.shortName} | ${event.tagline}`,
@@ -258,7 +259,7 @@ export default function Home() {
               <ul className="relative mt-10 flex flex-wrap items-center gap-8 border-t border-white/10 pt-8" aria-label="Our partners">
                 {approvedPartners.map((p) => (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <li key={p.name}><img src={p.logo} alt={p.name} className="h-10 w-auto opacity-80" /></li>
+                  <li key={p.name}><img src={asset(p.logo)} alt={p.name} className="h-10 w-auto opacity-80" /></li>
                 ))}
               </ul>
             )}

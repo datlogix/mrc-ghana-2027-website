@@ -25,10 +25,20 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
 ];
 
+/**
+ * STATIC_EXPORT=1 builds the static test preview (GitHub Pages). It has no server,
+ * so security headers, redirects, image optimisation and /api are not available.
+ * Production on Vercel uses the normal (server) build.
+ */
+const staticExport = process.env.STATIC_EXPORT === "1";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  ...(staticExport ? { output: "export" as const, trailingSlash: true, basePath: basePath || undefined } : {}),
   images: {
+    unoptimized: staticExport,
     formats: ["image/avif", "image/webp"],
     remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com" }],
   },
@@ -59,5 +69,11 @@ const nextConfig: NextConfig = {
     ];
   },
 };
+
+if (staticExport) {
+  // Not supported by static export; production (Vercel) keeps them.
+  delete nextConfig.headers;
+  delete nextConfig.redirects;
+}
 
 export default nextConfig;

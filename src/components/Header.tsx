@@ -117,7 +117,7 @@ export function Header() {
           <Logo />
         </Link>
 
-        <nav ref={navRef} aria-label="Main" className="hidden lg:block">
+        <nav ref={navRef} aria-label="Main" className="hidden xl:block">
           <ul className="flex items-center gap-1">
             {nav.map((item) => {
               const active = isActive(pathname, item);
@@ -182,7 +182,7 @@ export function Header() {
           <button
             ref={menuButtonRef}
             type="button"
-            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-white hover:bg-white/10"
+            className="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-white hover:bg-white/10"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             onClick={() => setMobileOpen((o) => !o)}
@@ -198,7 +198,7 @@ export function Header() {
       <div
         id="mobile-nav"
         hidden={!mobileOpen}
-        className="lg:hidden fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto bg-ink border-t border-white/10"
+        className="xl:hidden fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto bg-ink border-t border-white/10"
       >
         <nav aria-label="Mobile" className="container-x py-6">
           <ul className="space-y-1">

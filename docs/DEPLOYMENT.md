@@ -44,6 +44,15 @@ Take it down when Vercel staging exists: GitHub → `mrc-ghana-2027-preview` →
 
 ## 3. Staging / preview deployment (Vercel)
 
+**Status (15 Oct 2026):** project `datlogix/mrc-ghana-2027-website` exists in the `datlogix` Vercel team and is connected
+to the GitHub repo (every push to `main` deploys). `NEXT_PUBLIC_SITE_STAGE=staging` is set for Production and Preview,
+which adds a "Staging site" banner and `noindex`. **Remove that variable at go-live.**
+
+> Deployments are blocked if the latest commit's author email isn't linked to a member of the Vercel team.
+> Commit with the GitHub account's address (`41379589+datlogix@users.noreply.github.com`), or add your other
+> address to that GitHub account.
+
+
 1. In Vercel, **Add New → Project → Import Git Repository** → `mrc-ghana-2027-website`.
    - Framework: Next.js (auto-detected). Build command `npm run build`, output default, Node 20+ (22 recommended).
 2. Environment variables (Settings → Environment Variables):

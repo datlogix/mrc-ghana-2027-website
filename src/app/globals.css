@@ -113,11 +113,6 @@
   .card-hover { transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
   .card-hover:hover { border-color: var(--color-green-700); box-shadow: 0 12px 36px rgb(10 43 68 / .1); transform: translateY(-2px); }
 
-  .icon-tile { display: inline-flex; align-items: center; justify-content: center; border-radius: .5rem; }
-  .tile-green { background: var(--color-green-soft); color: var(--color-green-700); }
-  .tile-gold { background: var(--color-gold-soft); color: #9a6f00; }
-  .tile-blue { background: var(--color-secondary); color: var(--color-navy-700); }
-
   .prose-mrc p { margin-block: 0 1rem; }
   .prose-mrc ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .65rem; }
   .prose-mrc li { position: relative; padding-left: 1.5rem; }

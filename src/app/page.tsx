@@ -134,8 +134,8 @@ export default function Home() {
           <Link href="/categories" className="btn btn-outline self-start md:self-auto">View all categories</Link>
         </div>
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {categories.map((c, i) => (
-            <li key={c.slug}><CategoryCard c={c} index={i} /></li>
+          {categories.map((c) => (
+            <li key={c.slug}><CategoryCard c={c} /></li>
           ))}
           <li className="hidden xl:block">
             <Link href="/participate" className="flex h-full flex-col rounded-[var(--radius-card)] bg-green-soft p-6 transition-colors hover:bg-[#d3f0e2]">

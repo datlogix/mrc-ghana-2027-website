@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { categories, categoryPdfPath, getCategory } from "@/data/categories";
 import { videosForCategory } from "@/data/videos";
 import { event } from "@/config/event";
-import { CategoryIcon, tileClass } from "@/components/CategoryIcon";
+import { CategoryImage } from "@/components/CategoryImage";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { ArrowIcon, Breadcrumbs, DownloadIcon, ExternalIcon, ExternalLink, Notice } from "@/components/ui";
 import { formatDate } from "@/lib/format";
@@ -83,9 +83,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                 </ExternalLink>
               </div>
             </div>
-            <div className="hidden justify-end lg:flex" aria-hidden>
-              <div className={`icon-tile ${tileClass(idx)} h-52 w-52 !rounded-[var(--radius-card)]`}>
-                <CategoryIcon slug={c.slug} className="h-28 w-28" />
+            <div className="flex lg:justify-end">
+              <div className="w-48 overflow-hidden rounded-[var(--radius-card)] shadow-[0_8px_32px_rgba(10,43,68,.12)] sm:w-60 lg:w-72">
+                <CategoryImage slug={c.slug} name={c.name} sizes="(min-width: 1024px) 288px, 240px" priority />
               </div>
             </div>
           </div>

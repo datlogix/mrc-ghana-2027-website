@@ -28,8 +28,8 @@ export default function CategoriesPage() {
             </Notice>
           </div>
         )}
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((c, i) => <li key={c.slug}><CategoryCard c={c} index={i} /></li>)}
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {categories.map((c) => <li key={c.slug}><CategoryCard c={c} /></li>)}
         </ul>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <div className="card p-7">

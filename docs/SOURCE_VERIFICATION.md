@@ -68,3 +68,10 @@ Notes:
 - **Exhibition:** no verified video found; slot left empty with a link to the rules.
 - The 2026/2025 event **location** is recorded as "Greece". The exact 2025/2026 venue city is not stated in the video metadata and has not been asserted.
 - Titles and uploaders are verified. Organisers should still **watch each video once** before final sign-off to confirm the footage.
+
+## Images
+
+| Asset | Source | Used for | Rights |
+|---|---|---|---|
+| Seven sport tiles (`public/images/categories/*.png`) | Official MRC tiles on https://www.he-ro.gr/minoan-robotsports-competition (Wix media `75e4cb_…`), downloaded 15 Oct 2026 at 480×480 | Category cards, category page headers, resources list, gallery placeholders | © H.E.R.O. Include the MRC mark. **Written permission from H.E.R.O. to use these on mrcghana.com is required before go-live.** |
+| Hero photo (`public/images/hero-robotics-lab.jpg`) | Registration app asset (`mrcghana2027.lovable.app/assets/robotics-lab-*.jpg`) | Homepage hero | Owner to confirm licence/source |

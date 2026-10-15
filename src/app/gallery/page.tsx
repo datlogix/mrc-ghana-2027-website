@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { publishedGallery } from "@/data/gallery";
 import { Gallery } from "@/components/Gallery";
-import { CategoryIcon } from "@/components/CategoryIcon";
+import { CategoryImage } from "@/components/CategoryImage";
 import { categories } from "@/data/categories";
 import { PageHero, Section } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
@@ -37,12 +37,12 @@ export default function GalleryPage() {
               </div>
             </div>
             <ul className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4" aria-label="Gallery collections coming soon">
-              {categories.map((c, i) => (
-                <li key={c.slug} className={`relative flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[var(--radius-card)] p-5 ${i % 3 === 0 ? "bg-navy-950 text-white" : "bg-mist text-navy-950"} ${i === 0 ? "md:col-span-2 md:aspect-auto" : ""}`}>
-                  <CategoryIcon slug={c.slug} className={`h-12 w-12 ${i % 3 === 0 ? "text-gold-400" : "text-green-700"}`} />
-                  <div>
-                    <p className="font-display text-lg font-bold">{c.name}</p>
-                    <p className={`text-sm ${i % 3 === 0 ? "text-slate-400" : "text-muted"}`}>Collection coming soon</p>
+              {categories.map((c) => (
+                <li key={c.slug} className="card overflow-hidden">
+                  <CategoryImage slug={c.slug} name={c.name} decorative sizes="(min-width: 768px) 25vw, 50vw" className="opacity-90" />
+                  <div className="p-4">
+                    <p className="font-display text-lg font-bold text-navy-950">{c.name}</p>
+                    <p className="text-sm text-muted">Collection coming soon</p>
                   </div>
                 </li>
               ))}

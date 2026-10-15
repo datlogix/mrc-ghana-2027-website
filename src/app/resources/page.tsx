@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { categorySheets, generalResources } from "@/data/downloads";
 import { categories } from "@/data/categories";
-import { CategoryIcon, tileClass } from "@/components/CategoryIcon";
+import { CategoryImage } from "@/components/CategoryImage";
 import { DownloadIcon, Notice, PageHero, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 import { asset } from "@/lib/asset";
@@ -29,7 +29,7 @@ export default function ResourcesPage() {
             const c = categories[i];
             return (
               <li key={d.id} className="card flex items-start gap-5 p-6">
-                <span className={`icon-tile ${tileClass(i)} h-12 w-12 shrink-0`}><CategoryIcon slug={c.slug} className="h-7 w-7" /></span>
+                <span className="block w-16 shrink-0 overflow-hidden rounded-md sm:w-20"><CategoryImage slug={c.slug} name={c.name} decorative sizes="80px" /></span>
                 <div className="min-w-0 flex-1">
                   <h3 className="text-lg font-bold">{d.title}</h3>
                   <p className="mt-1 text-[0.98rem] text-muted">{d.description}</p>

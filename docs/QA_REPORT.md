@@ -80,4 +80,5 @@ Re-run on the staging URL (real CDN) for final figures.
 - [ ] Privacy, cookies, photography-consent and terms content: **legal review** (marked as draft on `/privacy`).
 - [ ] Indicative budget ranges on the partner form (GHS bands). Remove or adjust if not wanted.
 - [ ] Each video watched once to confirm the footage.
+- [ ] **H.E.R.O. permission** to use the official MRC sport tile images (and MRC mark) on mrcghana.com.
 - [ ] Final go-live approval for the domain cut-over.

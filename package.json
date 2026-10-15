@@ -17,6 +17,7 @@
     "node": ">=20.9"
   },
   "dependencies": {
+    "marked": "18.0.14",
     "next": "15.5.28",
     "react": "19.1.10",
     "react-dom": "19.1.10",

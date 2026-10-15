@@ -7,7 +7,7 @@
 
 | # | Criterion | Result | Evidence |
 |---|---|---|---|
-| 1 | Ghana event shows 30–31 January 2027 | ✅ | `event.ts`; build guard in `validate-content.ts` |
+| 1 | Ghana event shows 29–30 January 2027 | ✅ | `event.ts`; build guard in `validate-content.ts` |
 | 2 | Accra shown as host city | ✅ | Header, hero, footer, programme, structured data |
 | 3 | Venue shown as not yet announced | ✅ | Hero badge, programme, essentials. JSON-LD omits a venue name |
 | 4 | Exactly seven sports everywhere | ✅ | Single source `categories.ts`; build fails otherwise; forbidden-sport scan passes |

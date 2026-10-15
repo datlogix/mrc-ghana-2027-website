@@ -14,7 +14,7 @@ The easiest way to edit is directly on GitHub. Open the file, click the pencil i
 |---|---|
 | Event dates | `dates` (also update the check in `scripts/validate-content.ts` once the committee approves a change) |
 | Venue | Fill in `venue.name`, `address`, `googleMapsUrl`, `directions`, `accessibility` and `visitorGuidance`, then set `status: "confirmed"` |
-| Timetable | Add items to `programme.schedule["2027-01-30"]` / `["2027-01-31"]`, e.g. `{ time: "08:00", title: "Registration desk opens" }`, then set `programme.status: "confirmed"` |
+| Timetable | Add items to `programme.schedule["2027-01-29"]` / `["2027-01-30"]`, e.g. `{ time: "08:00", title: "Registration desk opens" }`, then set `programme.status: "confirmed"` |
 | Reporting / inspection arrangements | `programme.reportingAndInspection` |
 | Sports programme approval | `programmeApproval` → `status: "approved"`, `approvedOn`, `reference`. This removes the "subject to confirmation" notice. |
 | Registration status | `registration.status`: `"open"`, `"opening-soon"` or `"closed"` |
@@ -84,7 +84,29 @@ Add `{ group, q, a }`. Set `home: true` to also show it on the homepage. Use onl
 - Set its `href` (e.g. `"/downloads/coach-guide.pdf"`) and change `status` from `"forthcoming"` to `"published"`.
 - Never publish a placeholder as a final document.
 
-## 8. Checking your change
+## 8. Blog — `content/blog/*.md`
+
+Each post is one Markdown file. The file name becomes the address: `content/blog/team-update.md` → `/blog/team-update`.
+
+```markdown
+---
+title: Registration now open for schools
+date: 2026-11-01
+excerpt: One or two sentences shown on cards and in search results.
+tags: [Announcements, Registration]
+cover: hero            # or category:drones, category:archery … (optional)
+published: true        # false keeps it as a hidden draft
+---
+
+Write the post here in **Markdown**. Use ## for headings, - for bullet lists,
+and [link text](/categories/drones) for links to other pages.
+```
+
+- Publish only confirmed information, the same rules as everywhere else on the site.
+- Posts appear automatically on `/blog`, on the homepage ("Latest updates"), in the sitemap and in the RSS feed (`/blog/rss.xml`).
+- Files starting with `_` are ignored, which is useful for templates.
+
+## 9. Checking your change
 
 - Open the pull request's preview link and look at the affected pages, including on a phone.
 - The build runs `validate:content` automatically and fails with a clear message if something breaks the rules.

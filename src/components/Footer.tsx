@@ -59,6 +59,7 @@ export function Footer() {
           <h2 id="f-more" className="eyebrow">More</h2>
           <ul className="mt-4 space-y-2.5">
             <li><Link href="/about" className="hover:text-green-700">About MRC</Link></li>
+            <li><Link href="/blog" className="hover:text-green-700">News & blog</Link></li>
             <li><Link href="/media" className="hover:text-green-700">Videos & past events</Link></li>
             <li><Link href="/gallery" className="hover:text-green-700">Gallery</Link></li>
             <li><Link href="/partners" className="hover:text-green-700">Partners & sponsorship</Link></li>

@@ -60,7 +60,7 @@ Do not modify the data model silently. Document and review each change:
 - [x] Sports list shows the seven Ghana sports (verified on the app's landing page). Still to do: confirm the registration form's selection lists **exactly** the seven Ghana sports with these names: Drones · Drone Soccer 3×3 · Marathon (Basic / Advanced) · Football 3×3 · Shooting · Archery · Exhibition.
 - [ ] Eligibility uses **age**, not school class. Show the published bands and note that the organisers will confirm how age is calculated.
 - [ ] Drone Soccer 3×3 and Football 3×3 explain alliances of three teams from the same school or institution.
-- [ ] Event details match: 30–31 January 2027, Accra, venue to be announced.
+- [ ] Event details match: **29–30 January 2027** (changed from 30–31 January on 15 Oct 2026), Accra, venue to be announced.
 - [x] Branding: the website now uses the app's theme (navy `#0a2b44`, gold `#d6a21f`, green `#156a4c`, DM Sans + Manrope, green·gold·navy stripe).
 - [ ] Privacy notice linked, with a parental-consent step for under-18s as the organisers decide.
 - [ ] Duplicate-registration safeguards in Lovable (e.g. unique team name + coach email) — confirm existing behaviour before changing.

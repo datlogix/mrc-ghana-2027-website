@@ -35,6 +35,7 @@ export const nav: NavItem[] = [
     label: "Media",
     href: "/media",
     children: [
+      { label: "News & blog", href: "/blog" },
       { label: "Videos & past events", href: "/media" },
       { label: "Gallery", href: "/gallery" },
     ],

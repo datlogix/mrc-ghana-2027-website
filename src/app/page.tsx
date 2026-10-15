@@ -12,6 +12,8 @@ import { VideoEmbed } from "@/components/VideoEmbed";
 import { ArrowIcon, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 import { homeSteps } from "@/data/steps";
+import { getPosts } from "@/lib/blog";
+import { PostCard } from "@/components/PostCard";
 import { asset } from "@/lib/asset";
 
 export const metadata = pageMetadata({
@@ -28,6 +30,7 @@ export default function Home() {
   ].filter(Boolean) as typeof publishedVideos;
   const highlight = competitionVideos.find((v) => v.id === "b_fLG_9D27A") ?? competitionVideos[0];
   const homeFaqs = faqs.filter((f) => f.home);
+  const latestPosts = getPosts().slice(0, 3);
 
   return (
     <>
@@ -266,6 +269,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Latest news ── */}
+      {latestPosts.length > 0 && (
+        <Section className="pt-0 sm:pt-0" labelledBy="news-title">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <SectionHeading id="news-title" eyebrow="News & blog" title="Latest updates." />
+            <Link href="/blog" className="btn btn-outline self-start md:self-auto">All posts</Link>
+          </div>
+          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {latestPosts.map((p) => <li key={p.slug}><PostCard post={p} /></li>)}
+          </ul>
+        </Section>
+      )}
 
       {/* ── FAQ & essentials ── */}
       <Section className="pt-0 sm:pt-0" labelledBy="faq-title">

@@ -108,8 +108,8 @@ export const sources: Source[] = [
     title: "Project owner instruction — MRC Ghana 2027 event facts",
     url: "https://www.mrcghana.com",
     publisher: "The MakersPlace (project owner)",
-    checkedOn: "2026-10-14",
-    covers: "Ghana dates (30–31 January 2027), Accra, venue TBA, organiser, seven-sport working list.",
+    checkedOn: "2026-10-15",
+    covers: "Ghana dates (29–30 January 2027; changed from 30–31 January on 15 Oct 2026), Accra, venue TBA, organiser, seven-sport working list.",
     notes: "Owner-supplied facts override the previous mrcghana.com promotional content.",
   },
 ];

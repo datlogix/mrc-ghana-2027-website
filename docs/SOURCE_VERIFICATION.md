@@ -23,7 +23,7 @@ Re-verify before each content release, and at least monthly until the event.
 
 | Fact | Value published | Source |
 |---|---|---|
-| Ghana event | 30–31 January 2027, Accra, Ghana; venue TBA | O1 |
+| Ghana event | 29–30 January 2027 (owner change, 15 Oct 2026; previously 30–31 Jan), Accra, Ghana; venue TBA | O1 |
 | Ghana organiser | The MakersPlace | O1 |
 | International organiser | Hellenic Educational Robotics Organization (H.E.R.O.), Heraklion, Crete | S1, S2 |
 | Global Olympiad 2027 | 23–26 April 2027, Chania, Crete, Greece; Chania Kladissos Indoor Hall; 6th edition | S1, S2 |

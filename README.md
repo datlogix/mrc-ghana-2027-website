@@ -1,7 +1,7 @@
 # MRC Ghana 2027 — Official Website
 
 Source code for **www.mrcghana.com**, the website of the **Minoan RobotSports Competition Ghana 2027**
-(30–31 January 2027, Accra, Ghana · venue to be announced), organised in Ghana by **The MakersPlace**
+(29–30 January 2027, Accra, Ghana · venue to be announced), organised in Ghana by **The MakersPlace**
 with the international programme of the **Hellenic Educational Robotics Organization (H.E.R.O.)**.
 
 Built with Next.js 15 (App Router), React 19, TypeScript and Tailwind CSS 4. The visual theme matches the

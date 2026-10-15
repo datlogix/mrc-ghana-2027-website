@@ -21,12 +21,12 @@ export const event = {
 
   /** Ghana competition dates. Times are Ghana time (GMT, UTC+0). */
   dates: {
-    start: "2027-01-30",
-    end: "2027-01-31",
-    display: "30–31 January 2027",
+    start: "2027-01-29",
+    end: "2027-01-30",
+    display: "29–30 January 2027",
     days: [
+      { date: "2027-01-29", label: "Friday, 29 January 2027" },
       { date: "2027-01-30", label: "Saturday, 30 January 2027" },
-      { date: "2027-01-31", label: "Sunday, 31 January 2027" },
     ],
     timeZone: "GMT",
   },
@@ -57,8 +57,8 @@ export const event = {
     reportingAndInspection: null as string | null,
     /** Fill per day once approved, e.g. [{ time: "08:00", title: "Registration desk opens" }] */
     schedule: {
+      "2027-01-29": [] as { time: string; title: string; detail?: string }[],
       "2027-01-30": [] as { time: string; title: string; detail?: string }[],
-      "2027-01-31": [] as { time: string; title: string; detail?: string }[],
     },
   },
 
@@ -136,5 +136,5 @@ export const event = {
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.mrcghana.com").replace(/\/$/, "");
 
 /** Event start in Ghana time (GMT). Used by the countdown. */
-export const eventStartUtc = Date.UTC(2027, 0, 30, 0, 0, 0);
-export const eventEndUtc = Date.UTC(2027, 1, 1, 0, 0, 0); // end of Sunday 31 Jan (GMT)
+export const eventStartUtc = Date.UTC(2027, 0, 29, 0, 0, 0);
+export const eventEndUtc = Date.UTC(2027, 0, 31, 0, 0, 0); // end of Saturday 30 Jan (GMT)

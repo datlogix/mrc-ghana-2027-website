@@ -13,7 +13,7 @@ export const faqs: Faq[] = [
     group: "The event",
     home: true,
     q: "When and where is MRC Ghana 2027?",
-    a: "MRC Ghana 2027 takes place on Saturday 30 and Sunday 31 January 2027 in Accra, Ghana. The venue will be announced once confirmed.",
+    a: "MRC Ghana 2027 takes place on Friday 29 and Saturday 30 January 2027 in Accra, Ghana. The venue will be announced once confirmed.",
   },
   {
     group: "The event",

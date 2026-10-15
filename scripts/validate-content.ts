@@ -11,6 +11,8 @@ import { partners } from "../src/data/partners";
 import { faqs } from "../src/data/faqs";
 import { event } from "../src/config/event";
 import { sources } from "../src/data/sources";
+import { participationSteps, homeSteps } from "../src/data/steps";
+import { getPosts } from "../src/lib/blog";
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -41,9 +43,17 @@ for (const c of categories) {
   if (days > 60) warn(`Category ${c.slug} rules last checked ${Math.round(days)} days ago — re-verify against ${c.rulesUrl}.`);
 }
 
+// 1b. Blog posts parse (throws with the file name if front matter is invalid).
+const posts = getPosts({ includeDrafts: true });
+for (const p of posts) {
+  if (p.excerpt.length > 220) warn(`Blog post ${p.slug}: excerpt is long (${p.excerpt.length} chars).`);
+  if (Date.parse(p.date) > Date.now() + 86_400_000) warn(`Blog post ${p.slug} is dated in the future (${p.date}).`);
+}
+const postText = posts.filter((p) => p.published).map((p) => p.title + " " + p.html).join(" ");
+
 // 2. Forbidden sports must not appear anywhere in public content.
 const FORBIDDEN = [/marathon turbo/i, /obstacle race/i, /wrestling/i, /vex iq/i, /relay race/i, /rowing/i, /\bsumo\b/i];
-const publicText = JSON.stringify({ categories, faqs, videos: videos.filter((v) => v.published) });
+const publicText = JSON.stringify({ categories, faqs, participationSteps, homeSteps, videos: videos.filter((v) => v.published) }) + postText;
 for (const re of FORBIDDEN) if (re.test(publicText)) fail(`Forbidden sport mention found in public content: ${re}`);
 
 // 3. School grade/class must not be used for eligibility.
@@ -73,15 +83,19 @@ for (const g of gallery) {
 for (const p of partners) if (p.approved && !p.logo) fail(`Approved partner ${p.name} needs a logo path.`);
 
 // 7. Event facts that must not drift without an explicit decision.
-if (event.dates.start !== "2027-01-30" || event.dates.end !== "2027-01-31") fail("Ghana event dates changed — confirm with the organising committee and update this check.");
+if (event.dates.start !== "2027-01-29" || event.dates.end !== "2027-01-30") fail("Ghana event dates changed — confirm with the organising committee and update this check.");
 if (event.city !== "Accra") fail("Host city must be Accra.");
 if (event.venue.status === "confirmed" && !event.venue.name) fail("Venue marked confirmed but has no name.");
 if (event.globalOlympiad.dates.start !== "2027-04-23") warn("Global Olympiad dates changed — re-verify on he-ro.gr.");
 if (!event.registration.url) warn("NEXT_PUBLIC_REGISTRATION_URL is not set — /register will show the 'link being finalised' message.");
 
+// 7b. Stale event dates (the event moved from 30–31 to 29–30 January 2027 on 15 Oct 2026).
+if (/30\s*[–-]\s*31 January|31 January 2027|Sunday,? 31/i.test(publicText.replace(/If you saw earlier dates[^.]*\./g, "")))
+  fail("Public content still mentions the old 30–31 January dates — use 29–30 January 2027.");
+
 // 8. No guarantees of qualification/travel funding.
 const GUARANTEE = /(guaranteed (place|qualification|selection)|automatically qualif|fully funded|free (flights|travel))/i;
-if (GUARANTEE.test(JSON.stringify({ faqs, categories }))) fail("Content appears to guarantee qualification or travel funding.");
+if (GUARANTEE.test(JSON.stringify({ faqs, categories }) + postText)) fail("Content appears to guarantee qualification or travel funding.");
 
 for (const w of warnings) console.warn(`⚠  ${w}`);
 if (errors.length) {
@@ -89,4 +103,4 @@ if (errors.length) {
   console.error(`\nContent validation failed with ${errors.length} error(s).`);
   process.exit(1);
 }
-console.log(`✓  Content validation passed (${categories.length} categories, ${videos.filter((v) => v.published).length} published videos, ${gallery.filter((g) => g.published).length} gallery images).`);
+console.log(`✓  Content validation passed (${categories.length} categories, ${videos.filter((v) => v.published).length} published videos, ${gallery.filter((g) => g.published).length} gallery images, ${posts.filter((p) => p.published).length} blog posts).`);

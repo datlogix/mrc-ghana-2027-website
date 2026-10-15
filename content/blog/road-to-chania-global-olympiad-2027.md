@@ -18,6 +18,10 @@ The Minoan RobotSports Competition is an international movement that meets each 
 
 Source: [he-ro.gr](https://www.he-ro.gr/minoan-robotsports-competition), checked 14 October 2026.
 
+## Ghana has been there before
+
+Ghana took part in the **2025 MRC Global Olympiad in Crete**. MRC Ghana 2027 builds on that experience.
+
 ## Two separate events
 
 **MRC Ghana 2027** (29–30 January 2027, Accra) and the **MRC Global Olympiad 2027** (23–26 April 2027, Chania) are separate events with their own organisers and arrangements.

@@ -109,7 +109,7 @@ export const sources: Source[] = [
     url: "https://www.mrcghana.com",
     publisher: "The MakersPlace (project owner)",
     checkedOn: "2026-10-15",
-    covers: "Ghana dates (29–30 January 2027; changed from 30–31 January on 15 Oct 2026), Accra, venue TBA, organiser, seven-sport working list.",
+    covers: "Ghana dates (29–30 January 2027; changed from 30–31 January on 15 Oct 2026), Accra, venue TBA, organiser, seven-sport working list, Ghana’s participation in the 2025 MRC Global Olympiad in Crete.",
     notes: "Owner-supplied facts override the previous mrcghana.com promotional content.",
   },
 ];

@@ -77,7 +77,7 @@ export const faqs: Faq[] = [
     group: "International pathway",
     home: true,
     q: "Can Ghanaian teams go to the Global Olympiad in Greece?",
-    a: "The MRC Global Olympiad 2027 takes place on 23–26 April 2027 in Chania, Crete, Greece. Any progression from Ghana depends on official eligibility, the national selection arrangements, compliance with the rules and any international places confirmed. Winning a Ghana category does not by itself guarantee selection.",
+    a: "Ghana took part in the 2025 MRC Global Olympiad in Crete. The 2027 Global Olympiad takes place on 23–26 April 2027 in Chania, Crete, Greece. Any progression from Ghana depends on official eligibility, the national selection arrangements, compliance with the rules and any international places confirmed. Winning a Ghana category does not by itself guarantee selection.",
   },
   {
     group: "International pathway",

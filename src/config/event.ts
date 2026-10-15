@@ -129,6 +129,8 @@ export const event = {
     venue: "Chania Kladissos Indoor Hall",
     sourceUrl: "https://www.he-ro.gr/minoan-robotsports-competition",
     verifiedOn: "2026-10-14",
+    /** Ghana's previous participation (project owner, 15 Oct 2026). */
+    ghanaHistory: [{ year: 2025, text: "Ghana took part in the 2025 MRC Global Olympiad in Crete." }],
   },
 
   /** Partner/sponsor enquiries are delivered to ENQUIRY_TO_EMAIL (server env). */

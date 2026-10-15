@@ -198,6 +198,9 @@ export default function Home() {
               title="From Accra to Crete."
               intro="MRC Ghana 2027 is part of a worldwide robot sports movement that meets each year at the MRC Global Olympiad in Greece."
             />
+            <p className="mt-6 inline-flex items-center gap-3 rounded-md border-l-4 border-gold-500 bg-gold-soft px-4 py-3 font-semibold text-navy-950">
+              {event.globalOlympiad.ghanaHistory[0].text}
+            </p>
             <p className="mt-6 text-[0.98rem] text-muted">
               Any progression from Ghana to Greece depends on official eligibility, national selection arrangements, compliance with the rules and any international places confirmed. Winning a Ghana category does not by itself guarantee selection, and selection does not include travel or fees unless separately confirmed.
             </p>

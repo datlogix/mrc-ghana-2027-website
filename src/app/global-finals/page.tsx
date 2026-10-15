@@ -47,6 +47,15 @@ export default function GlobalFinalsPage() {
           </section>
         </div>
 
+        <section aria-labelledby="ghana-history" className="mx-auto mt-14 max-w-3xl rounded-[var(--radius-card)] border-l-4 border-gold-500 bg-gold-soft p-7">
+          <p className="eyebrow">Ghana at the Global Olympiad</p>
+          <h2 id="ghana-history" className="mt-2 text-2xl font-extrabold">Ghana has been there before</h2>
+          {g.ghanaHistory.map((h) => (
+            <p key={h.year} className="mt-3 text-lg text-body">{h.text}</p>
+          ))}
+          <p className="mt-3 text-muted">MRC Ghana 2027 builds on that experience, with the 2027 Global Olympiad in {g.city} on {g.dates.display}.</p>
+        </section>
+
         <div className="mx-auto mt-14 max-w-3xl space-y-6 text-lg">
           <h2 className="text-3xl font-extrabold">How progression works</h2>
           <p>Any progression from MRC Ghana 2027 to the Global Olympiad is conditional. It depends on:</p>

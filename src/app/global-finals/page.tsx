@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { asset, isStaticPreview } from "@/lib/asset";
 import { event } from "@/config/event";
 import { ExternalLink, Notice, PageHero, Section } from "@/components/ui";
 import { formatDate } from "@/lib/format";
@@ -47,13 +49,25 @@ export default function GlobalFinalsPage() {
           </section>
         </div>
 
-        <section aria-labelledby="ghana-history" className="mx-auto mt-14 max-w-3xl rounded-[var(--radius-card)] border-l-4 border-gold-500 bg-gold-soft p-7">
-          <p className="eyebrow">Ghana at the Global Olympiad</p>
-          <h2 id="ghana-history" className="mt-2 text-2xl font-extrabold">Ghana has been there before</h2>
-          {g.ghanaHistory.map((h) => (
-            <p key={h.year} className="mt-3 text-lg text-body">{h.text}</p>
-          ))}
-          <p className="mt-3 text-muted">MRC Ghana 2027 builds on that experience, with the 2027 Global Olympiad in {g.city} on {g.dates.display}.</p>
+        <section aria-labelledby="ghana-history" className="mx-auto mt-14 grid max-w-5xl items-center gap-8 overflow-hidden rounded-[var(--radius-card)] border-l-4 border-gold-500 bg-gold-soft md:grid-cols-[1.1fr_1fr]">
+          <Image
+            src={asset("/images/gallery/2025-ghana-flag-parade.jpg")}
+            alt="A member of the Ghana delegation raises the Ghana flag during the parade of nations at the MRC Global Olympiad 2025"
+            width={1600}
+            height={899}
+            unoptimized={isStaticPreview}
+            sizes="(min-width: 768px) 520px, 100vw"
+            className="h-full w-full object-cover"
+          />
+          <div className="p-7 md:py-8 md:pl-0">
+            <p className="eyebrow">Ghana at the Global Olympiad</p>
+            <h2 id="ghana-history" className="mt-2 text-2xl font-extrabold">Ghana has been there before</h2>
+            {g.ghanaHistory.map((h) => (
+              <p key={h.year} className="mt-3 text-lg text-body">{h.text}</p>
+            ))}
+            <p className="mt-3 text-muted">MRC Ghana 2027 builds on that experience, with the 2027 Global Olympiad in {g.city} on {g.dates.display}.</p>
+            <Link href="/gallery" className="mt-4 inline-flex font-semibold text-green-700 underline underline-offset-4">See Team Ghana at MRC 2025</Link>
+          </div>
         </section>
 
         <div className="mx-auto mt-14 max-w-3xl space-y-6 text-lg">

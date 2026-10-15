@@ -16,7 +16,7 @@
 | 7 | Each category links to the correct H.E.R.O. rules | ✅ | URLs enforced by build guard; all return 200 (external link check) |
 | 8 | Videos have verified destinations and accurate labels | ✅ | 14 videos verified via oEmbed (title, uploader, date, embeddable); privacy-enhanced embed loads on click |
 | 9 | Past event materials have verified dates and sources | ✅ | Olympiad 2025/2026 videos labelled "Greece", explicitly not Ghana |
-| 10 | Gallery works on mobile | ⚠️ Partly | Gallery, filters and lightbox are built. **No authorised photos exist yet**, so the page shows the "being curated" state. Lightbox to be re-tested with the first real photos |
+| 10 | Gallery works on mobile | ✅ | 13 photos from MRC Global Olympiad 2025 (5 of Team Ghana); category / year / Team Ghana filters, keyboard lightbox, lazy loading; no overflow at 375 px |
 | 11 | Lovable registration journey works | ⚠️ Partly | Website → `/register` → `mrcghana2027.lovable.app/register` → sign-in page verified. Form submission → confirmation not run: it would create a real record. Needs an agreed test entry (see LOVABLE_INTEGRATION.md) |
 | 12 | Sponsorship enquiries reach the approved destination | ⚠️ Partly | Endpoint verified end-to-end against a mock webhook (all fields delivered). Needs production mailbox + Resend key or webhook |
 | 13 | No fabricated sponsors or unconfirmed venue | ✅ | Partner wall hidden (0 approved); venue TBA |
@@ -80,5 +80,6 @@ Re-run on the staging URL (real CDN) for final figures.
 - [ ] Privacy, cookies, photography-consent and terms content: **legal review** (marked as draft on `/privacy`).
 - [ ] Indicative budget ranges on the partner form (GHS bands). Remove or adjust if not wanted.
 - [ ] Each video watched once to confirm the footage.
+- [ ] **Photo consent:** confirm the MRC 2025 event photography consent covers use of these gallery photos on mrcghana.com (young participants are visible in some).
 - [ ] **H.E.R.O. permission** to use the official MRC sport tile images (and MRC mark) on mrcghana.com.
 - [x] Final go-live approval for the domain cut-over (owner, 15 Oct 2026).

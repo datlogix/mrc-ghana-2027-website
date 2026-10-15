@@ -9,6 +9,8 @@ import { asset } from "@/lib/asset";
 export function Gallery({ images }: { images: GalleryImage[] }) {
   const [cat, setCat] = useState<string>("all");
   const [year, setYear] = useState<string>("all");
+  const [team, setTeam] = useState<string>("all");
+  const hasGhana = images.some((i) => i.ghana);
   const [index, setIndex] = useState<number | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const lastFocus = useRef<HTMLElement | null>(null);
@@ -16,7 +18,10 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
   const years = useMemo(() => [...new Set(images.map((i) => i.event.year))].sort((a, b) => b - a), [images]);
   const usedCats = useMemo(() => categories.filter((c) => images.some((i) => i.category === c.slug)), [images]);
   const filtered = images.filter(
-    (i) => (cat === "all" || i.category === cat) && (year === "all" || String(i.event.year) === year),
+    (i) =>
+      (cat === "all" || i.category === cat) &&
+      (year === "all" || String(i.event.year) === year) &&
+      (team === "all" || (team === "ghana" && i.ghana)),
   );
 
   const open = (i: number, el: HTMLElement) => {
@@ -68,6 +73,15 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
             {years.map((y) => <option key={y} value={y}>{y}</option>)}
           </select>
         </label>
+        {hasGhana && (
+          <label className="sm:w-48">
+            <span className="field-label">Show</span>
+            <select className="field" value={team} onChange={(e) => setTeam(e.target.value)}>
+              <option value="all">All photos</option>
+              <option value="ghana">Team Ghana</option>
+            </select>
+          </label>
+        )}
         <p className="text-muted sm:ml-auto" aria-live="polite">{filtered.length} photograph{filtered.length === 1 ? "" : "s"}</p>
       </div>
 

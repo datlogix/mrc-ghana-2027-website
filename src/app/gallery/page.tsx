@@ -19,7 +19,7 @@ export default function GalleryPage() {
         crumbs={[{ name: "Gallery", path: "/gallery" }]}
         eyebrow="Gallery"
         title="Moments from the arena."
-        intro="Authorised photographs from MRC competitions. Every image is labelled with its real event, year and location."
+        intro="Photographs from MRC competitions, including Team Ghana at the 2025 Global Olympiad in Crete. Every image is labelled with its real event, year and location."
       />
       <Section>
         {publishedGallery.length > 0 ? (

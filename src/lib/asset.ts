@@ -8,3 +8,6 @@ export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH || "
 
 /** True for the static test preview build (no server: forms disabled, noindex, banner). */
 export const isStaticPreview = process.env.NEXT_PUBLIC_STATIC_PREVIEW === "1";
+
+/** Staging deployment (e.g. *.vercel.app before go-live): banner + noindex, forms still work. */
+export const isStaging = process.env.NEXT_PUBLIC_SITE_STAGE === "staging";

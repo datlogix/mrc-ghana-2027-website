@@ -17,9 +17,9 @@
     "node": ">=20.9"
   },
   "dependencies": {
-    "next": "15.5.4",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
+    "next": "15.5.28",
+    "react": "19.1.10",
+    "react-dom": "19.1.10",
     "zod": "3.25.76"
   },
   "devDependencies": {
@@ -30,10 +30,15 @@
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
     "pdfkit": "0.17.2",
-    "postcss": "8.5.6",
+    "postcss": "8.5.30",
     "qrcode": "1.5.4",
     "tailwindcss": "4.1.13",
     "tsx": "4.20.5",
     "typescript": "5.9.2"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "$postcss"
+    }
   }
 }

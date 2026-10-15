@@ -108,8 +108,8 @@ export const event = {
   },
 
   contact: {
-    /** Organiser email shown publicly (as published on the previous site). */
-    email: "info@makersplacegh.com",
+    /** Public organiser email used across the website (owner instruction, 15 Oct 2026). */
+    email: "partnerships@makersplacegh.com",
     /** Partnership & sponsorship enquiries (from the official Call for Partnership flyer, 15 Oct 2026). */
     partnershipsEmail: "partnerships@makersplacegh.com",
     /** Organiser telephone numbers (from the official MRC Ghana 2027 flyers, 15 Oct 2026). */

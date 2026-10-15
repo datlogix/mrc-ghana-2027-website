@@ -1,5 +1,14 @@
 # Deployment, domain replacement & rollback
 
+## Go-live status (15 Oct 2026)
+
+- **www.mrcghana.com is live with the new site** (approved by the owner). `mrcghana.com`, `http://` and `http://www.` redirect (308) to `https://www.mrcghana.com`.
+- The production domain is served by a Vercel project in the account that owns mrcghana.com (not the `datlogix` team), built from this GitHub repo's `main` branch. **Set production environment variables in that project** (e.g. `RESEND_API_KEY`, `ENQUIRY_TO_EMAIL`, `ENQUIRY_FROM_EMAIL`).
+- `datlogix/mrc-ghana-2027-website` (https://mrc-ghana-2027-website.vercel.app) remains as **staging**, with `NEXT_PUBLIC_SITE_STAGE=staging` (banner + noindex).
+- The previous site had already been removed from Vercel before cut-over; a copy captured during the 14 Oct audit is kept locally in `backups/` (not committed). Rollback to the old site is therefore no longer possible; roll back new releases with Vercel → Deployments → Promote/Instant Rollback.
+- Go-live checks passed: HTTPS, redirects, legacy URL redirects, 41 internal / 43 external links, Register → Lovable, Lighthouse (mobile) A11y 100, Best Practices 100, SEO 100, Performance 98–99.
+
+
 > **Do not overwrite or take down the current production website without explicit final approval from the organisers.**
 
 ## 1. Current production (audit, 14 October 2026)

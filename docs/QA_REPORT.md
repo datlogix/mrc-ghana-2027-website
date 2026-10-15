@@ -1,7 +1,7 @@
 # QA report — MRC Ghana 2027 website
 
 **Build tested:** local production build (`next build` + `next start`), 14 October 2026. Re-themed to match the registration app the same day.
-**Status:** ready for staging review. **Not yet production-ready.** The external dependencies in §3 must be resolved first.
+**Status:** **Live on www.mrcghana.com since 15 Oct 2026** (owner-approved). Remaining dependencies in §3 still apply, notably enquiry email delivery.
 
 ## 1. Acceptance criteria
 
@@ -81,4 +81,4 @@ Re-run on the staging URL (real CDN) for final figures.
 - [ ] Indicative budget ranges on the partner form (GHS bands). Remove or adjust if not wanted.
 - [ ] Each video watched once to confirm the footage.
 - [ ] **H.E.R.O. permission** to use the official MRC sport tile images (and MRC mark) on mrcghana.com.
-- [ ] Final go-live approval for the domain cut-over.
+- [x] Final go-live approval for the domain cut-over (owner, 15 Oct 2026).

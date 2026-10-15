@@ -6,12 +6,48 @@
 export type Partner = {
   name: string;
   logo: string; // e.g. "/images/partners/acme.svg"
+  width: number; // logo file's pixel size
+  height: number;
+  /** Tile colour behind the logo: "dark" for logos made for black backgrounds. */
+  background: "light" | "dark";
   url?: string;
   role: string; // e.g. "Venue Partner" — only roles agreed in writing
   approved: boolean;
 };
 
-export const partners: Partner[] = [];
+/** Logos supplied and approved by the project owner on 15 Oct 2026. */
+export const partners: Partner[] = [
+  {
+    name: "Minoan RobotSports Competition Global Olympiad",
+    logo: "/images/brand/mrc-global-olympiad.jpg",
+    width: 868,
+    height: 374,
+    background: "dark",
+    url: "https://www.he-ro.gr/minoan-robotsports-competition",
+    role: "International competition",
+    approved: true,
+  },
+  {
+    name: "Hellenic Educational Robotics Organization (H.E.R.O.)",
+    logo: "/images/brand/hero-organization.jpg",
+    width: 560,
+    height: 298,
+    background: "dark",
+    url: "https://www.he-ro.gr",
+    role: "International organiser",
+    approved: true,
+  },
+  {
+    name: "The MakersPlace",
+    logo: "/images/brand/makersplace.png",
+    width: 900,
+    height: 314,
+    background: "light",
+    url: "https://makersplacegh.com",
+    role: "Ghana organiser",
+    approved: true,
+  },
+];
 
 export const approvedPartners = partners.filter((p) => p.approved);
 

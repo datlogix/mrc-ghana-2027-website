@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="border-t border-line bg-white text-body">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Logo />
+          <Logo size="lg" />
           <p className="mt-5 max-w-sm">
             {event.name}. {event.dates.display}, {event.city}, {event.country}.
           </p>

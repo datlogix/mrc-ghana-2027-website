@@ -74,4 +74,5 @@ Notes:
 | Asset | Source | Used for | Rights |
 |---|---|---|---|
 | Seven sport tiles (`public/images/categories/*.png`) | Official MRC tiles on https://www.he-ro.gr/minoan-robotsports-competition (Wix media `75e4cb_…`), downloaded 15 Oct 2026 at 480×480 | Category cards, category page headers, resources list, gallery placeholders | © H.E.R.O. Include the MRC mark. **Written permission from H.E.R.O. to use these on mrcghana.com is required before go-live.** |
+| Organiser logos (`public/images/brand/`: MRC Global Olympiad, H.E.R.O., The MakersPlace) | Supplied by the project owner, 15 Oct 2026 | Header/footer (MakersPlace), organisers & partners logo wall | Supplied and approved for use by the owner. MakersPlace logo flattened onto white and trimmed |
 | Hero photo (`public/images/hero-robotics-lab.jpg`) | Registration app asset (`mrcghana2027.lovable.app/assets/robotics-lab-*.jpg`) | Homepage hero | Owner to confirm licence/source |

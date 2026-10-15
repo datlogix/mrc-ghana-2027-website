@@ -3,7 +3,7 @@ import { approvedPartners, partnershipAreas } from "@/data/partners";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { PageHero, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
-import { asset } from "@/lib/asset";
+import { PartnerLogos } from "@/components/PartnerLogos";
 
 export const metadata = pageMetadata({
   title: "Partnerships and Sponsorship",
@@ -58,16 +58,8 @@ export default function PartnersPage() {
 
       {approvedPartners.length > 0 && (
         <Section labelledBy="our-partners">
-          <SectionHeading id="our-partners" eyebrow="Thank you" title="Our partners" />
-          <ul className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            {approvedPartners.map((p) => (
-              <li key={p.name} className="card flex flex-col items-center justify-center p-6 text-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={asset(p.logo)} alt={p.name} className="h-12 w-auto" />
-                <span className="mt-3 text-sm text-muted">{p.role}</span>
-              </li>
-            ))}
-          </ul>
+          <SectionHeading id="our-partners" eyebrow="Organisers & partners" title="Working together" />
+          <PartnerLogos className="mt-10" />
         </Section>
       )}
 

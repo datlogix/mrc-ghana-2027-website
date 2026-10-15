@@ -12,9 +12,9 @@ import { VideoEmbed } from "@/components/VideoEmbed";
 import { ArrowIcon, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 import { homeSteps } from "@/data/steps";
+import { PartnerLogos } from "@/components/PartnerLogos";
 import { getPosts } from "@/lib/blog";
 import { PostCard } from "@/components/PostCard";
-import { asset } from "@/lib/asset";
 
 export const metadata = pageMetadata({
   title: `${event.shortName} | ${event.tagline}`,
@@ -239,6 +239,14 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* ── Organisers & partners ── */}
+      {approvedPartners.length > 0 && (
+        <Section className="pb-0 sm:pb-0" labelledBy="org-title">
+          <SectionHeading id="org-title" eyebrow="Organisers & partners" title="Brought to you by." align="center" />
+          <PartnerLogos className="mx-auto mt-10 max-w-5xl" />
+        </Section>
+      )}
+
       {/* ── Partners ── */}
       <section className="py-16 sm:py-24" aria-labelledby="partner-title">
         <div className="container-x">
@@ -258,14 +266,6 @@ export default function Home() {
                 <Link href="/partners" className="btn btn-ghost-light">Explore Partnership Opportunities</Link>
               </div>
             </div>
-            {approvedPartners.length > 0 && (
-              <ul className="relative mt-10 flex flex-wrap items-center gap-8 border-t border-white/10 pt-8" aria-label="Our partners">
-                {approvedPartners.map((p) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <li key={p.name}><img src={asset(p.logo)} alt={p.name} className="h-10 w-auto opacity-80" /></li>
-                ))}
-              </ul>
-            )}
           </div>
         </div>
       </section>

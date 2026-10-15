@@ -2,6 +2,7 @@ import Link from "next/link";
 import { categorySheets, generalResources } from "@/data/downloads";
 import { categories } from "@/data/categories";
 import { CategoryImage } from "@/components/CategoryImage";
+import { Flyer } from "@/components/Flyer";
 import { DownloadIcon, Notice, PageHero, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 import { asset } from "@/lib/asset";
@@ -44,7 +45,15 @@ export default function ResourcesPage() {
           })}
         </ul>
       </Section>
-      <Section className="bg-mist" labelledBy="more-title">
+      <Section className="bg-mist" labelledBy="flyers-title">
+        <SectionHeading id="flyers-title" eyebrow="Announcements" title="Official flyers" intro="Share these with schools, clubs, parents and partners." />
+        <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li><Flyer id="save-the-date" sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw" /></li>
+          <li><Flyer id="categories" sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw" /></li>
+          <li><Flyer id="call-for-partnership" sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw" /></li>
+        </ul>
+      </Section>
+      <Section labelledBy="more-title">
         <SectionHeading id="more-title" eyebrow="More resources" title="Guides and documents" />
         <div className="mt-6 max-w-3xl">
           <Notice title="Forthcoming resources">These documents are in preparation and will be published here once approved by the organisers.</Notice>

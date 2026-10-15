@@ -1,5 +1,6 @@
 import { event } from "@/config/event";
 import { ExternalLink, Notice, PageHero, Section } from "@/components/ui";
+import { Flyer } from "@/components/Flyer";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -20,6 +21,17 @@ export default function ProgrammePage() {
         intro={`${event.dates.display} · Ghana time (GMT)`}
       />
       <Section>
+        <div className="mb-14 grid items-center gap-10 lg:grid-cols-[minmax(0,22rem)_1fr]">
+          <Flyer id="save-the-date" priority className="mx-auto w-full max-w-xs lg:max-w-none" />
+          <div>
+            <p className="eyebrow">Save the date</p>
+            <h2 className="mt-3 text-4xl font-extrabold">{event.dates.display}</h2>
+            <p className="mt-4 text-lg text-muted">
+              {event.dates.days.map((d) => d.label.split(",")[0]).join(" and ")} in {event.city}, {event.country}. The venue and the daily timetable will be published here once confirmed.
+            </p>
+            <p className="mt-4 text-muted">Questions: {event.contact.phones.join(" / ")} · <a href={`mailto:${event.contact.email}`} className="font-semibold text-navy-700 underline underline-offset-4">{event.contact.email}</a></p>
+          </div>
+        </div>
         <div className="grid gap-6 md:grid-cols-2">
           {event.dates.days.map((d) => {
             const items = event.programme.schedule[d.date as keyof typeof event.programme.schedule];

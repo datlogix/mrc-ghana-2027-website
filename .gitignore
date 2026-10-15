@@ -20,3 +20,6 @@ npm-debug.log*
 # Vercel
 .vercel
 .claude/
+
+# Local snapshots of the previous site (not committed)
+backups/

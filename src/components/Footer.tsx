@@ -25,7 +25,15 @@ export function Footer() {
             </ExternalLink>
             .
           </p>
-          <p className="mt-4">
+          <p className="mt-4 text-sm">
+            {event.contact.phones.map((p, i) => (
+              <span key={p}>
+                {i > 0 && " / "}
+                <a href={`tel:${p.replace(/\s/g, "")}`} className="font-medium text-navy-950 underline underline-offset-4">{p}</a>
+              </span>
+            ))}
+          </p>
+          <p className="mt-2">
             <a href={`mailto:${event.contact.email}`} className="font-semibold text-green-700 underline underline-offset-4">
               {event.contact.email}
             </a>

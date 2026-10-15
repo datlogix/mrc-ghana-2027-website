@@ -135,7 +135,7 @@
   .prose-blog ol { list-style: decimal; }
   .prose-blog li + li { margin-top: .45rem; }
   .prose-blog blockquote { border-left: 4px solid var(--color-gold-500); background: var(--color-gold-soft); padding: 1rem 1.25rem; border-radius: .375rem; }
-  .prose-blog img { border-radius: var(--radius-card); }
+  .prose-blog img { display: block; width: 100%; max-width: 30rem; height: auto; margin-inline: auto; border-radius: var(--radius-card); box-shadow: 0 12px 36px rgb(10 43 68 / .16); }
   .prose-blog hr { border-color: var(--color-line); margin-block: 2rem; }
 
   .field-label { display: block; font-weight: 600; color: var(--color-navy-950); margin-bottom: .4rem; }

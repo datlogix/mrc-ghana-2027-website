@@ -110,7 +110,10 @@ export const event = {
   contact: {
     /** Organiser email shown publicly (as published on the previous site). */
     email: "info@makersplacegh.com",
-    phone: null as string | null,
+    /** Partnership & sponsorship enquiries (from the official Call for Partnership flyer, 15 Oct 2026). */
+    partnershipsEmail: "partnerships@makersplacegh.com",
+    /** Organiser telephone numbers (from the official MRC Ghana 2027 flyers, 15 Oct 2026). */
+    phones: ["+233 249 391 817", "+233 556 310 034"],
     whatsapp: null as string | null,
     /** Only list verified official channels. */
     social: [] as { label: string; url: string }[],

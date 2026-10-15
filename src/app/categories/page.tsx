@@ -2,6 +2,7 @@ import Link from "next/link";
 import { categories } from "@/data/categories";
 import { event } from "@/config/event";
 import { CategoryCard } from "@/components/CategoryCard";
+import { Flyer } from "@/components/Flyer";
 import { Notice, PageHero, Section } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 
@@ -28,9 +29,29 @@ export default function CategoriesPage() {
             </Notice>
           </div>
         )}
+        <h2 className="sr-only">All seven categories</h2>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {categories.map((c) => <li key={c.slug}><CategoryCard c={c} /></li>)}
         </ul>
+        <div className="mt-16 grid items-center gap-10 rounded-[var(--radius-card)] bg-mist p-6 sm:p-10 lg:grid-cols-[minmax(0,22rem)_1fr]">
+          <Flyer id="categories" className="mx-auto w-full max-w-xs lg:max-w-none" />
+          <div>
+            <p className="eyebrow">Share the programme</p>
+            <h2 className="mt-3 text-3xl font-extrabold">Seven categories, one weekend in Accra.</h2>
+            <p className="mt-4 text-lg text-muted">
+              MRC Ghana 2027 takes place on {event.dates.display} in {event.city}. Download the official categories flyer to share with your school, club or community.
+            </p>
+            <ol className="mt-6 grid gap-2 sm:grid-cols-2">
+              {categories.map((c, i) => (
+                <li key={c.slug}>
+                  <Link href={`/categories/${c.slug}`} className="font-semibold text-navy-900 underline-offset-4 hover:text-green-700 hover:underline">
+                    {i + 1}. {c.name}
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <div className="card p-7">
             <h2 className="text-xl font-bold">Drones vs Drone Soccer</h2>

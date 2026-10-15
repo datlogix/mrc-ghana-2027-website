@@ -50,6 +50,10 @@ export function eventJsonLd() {
         name: event.organisers.ghana.name,
         url: event.organisers.ghana.url,
         email: event.contact.email,
+        telephone: event.contact.phones[0],
+        contactPoint: [
+          { "@type": "ContactPoint", contactType: "Partnerships", email: event.contact.partnershipsEmail, telephone: event.contact.phones, areaServed: "GH" },
+        ],
       },
       {
         "@type": "WebSite",

@@ -72,7 +72,8 @@ function load(file: string): Post {
   const html = withBasePath(
     (marked.parse(body, { async: false, gfm: true }) as string)
       // open external links in a new tab safely
-      .replace(/<a href="(https?:\/\/[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener noreferrer"'),
+      .replace(/<a href="(https?:\/\/[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener noreferrer"')
+      .replace(/<img /g, '<img loading="lazy" decoding="async" '),
   );
   return {
     slug: file.replace(/\.md$/, ""),

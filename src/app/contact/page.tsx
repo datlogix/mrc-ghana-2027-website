@@ -22,7 +22,13 @@ export default function ContactPage() {
               <p className="mt-1">{event.organisers.ghana.name}</p>
               <dl className="mt-4 space-y-3">
                 <div><dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">Email</dt><dd><a href={`mailto:${event.contact.email}`} className="font-semibold text-navy-700 underline underline-offset-4">{event.contact.email}</a></dd></div>
-                {event.contact.phone && <div><dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">Telephone</dt><dd><a href={`tel:${event.contact.phone.replace(/\s/g, "")}`}>{event.contact.phone}</a></dd></div>}
+                <div>
+                  <dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">Telephone</dt>
+                  {event.contact.phones.map((p) => (
+                    <dd key={p}><a href={`tel:${p.replace(/\s/g, "")}`} className="font-semibold text-navy-700 underline underline-offset-4">{p}</a></dd>
+                  ))}
+                </div>
+                <div><dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">Partnerships</dt><dd><a href={`mailto:${event.contact.partnershipsEmail}`} className="font-semibold text-navy-700 underline underline-offset-4">{event.contact.partnershipsEmail}</a></dd></div>
                 <div><dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">Location</dt><dd>{event.city}, {event.country}</dd></div>
               </dl>
             </div>

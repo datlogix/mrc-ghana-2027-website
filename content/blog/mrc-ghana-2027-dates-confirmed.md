@@ -11,6 +11,8 @@ published: true
 
 > **Please note the dates.** If you saw earlier dates for MRC Ghana 2027, please use **29–30 January 2027**.
 
+![Save the date flyer: MRC Ghana, Minoan RoboSports Competition, January 29–30, 2027](/images/announcements/mrc-ghana-2027-save-the-date.jpg)
+
 ## What is MRC Ghana 2027?
 
 MRC Ghana 2027 is Ghana's edition of the Minoan RobotSports Competition, where robotics is played as a sport. Students design, build and program robots and drones that race, shoot, fly precision missions and play football, all under clear rules and against the clock.

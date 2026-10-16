@@ -69,10 +69,16 @@ export default function ResourcesPage() {
               <p className="mt-3 text-sm text-muted">For: {r.audience}</p>
               {r.status === "published" && r.href && (
                 <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
-                  <a href={asset(r.href)} className="inline-flex items-center gap-2 font-semibold text-navy-700 underline" download><DownloadIcon /> Download</a>
+                  <a href={asset(r.href)} className="inline-flex items-center gap-2 font-semibold text-navy-700 underline" download><DownloadIcon /> {r.alternates?.length ? "Download PDF" : "Download"}</a>
                   {r.format && <span className="text-sm text-muted">{r.format}</span>}
                 </p>
               )}
+              {r.status === "published" && r.alternates?.map((alt) => (
+                <p key={alt.href} className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <a href={asset(alt.href)} className="inline-flex items-center gap-2 font-semibold text-navy-700 underline" download><DownloadIcon /> Download {alt.label}</a>
+                  <span className="text-sm text-muted">{alt.format}</span>
+                </p>
+              ))}
             </li>
           ))}
         </ul>

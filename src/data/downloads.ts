@@ -12,6 +12,8 @@ export type Download = {
   audience: string;
   href?: string;
   format?: string;
+  /** Other formats of the same document, e.g. a PowerPoint version. */
+  alternates?: { label: string; href: string; format: string }[];
   status: "published" | "forthcoming" | "hidden";
 };
 
@@ -36,6 +38,7 @@ export const generalResources: Download[] = [
     audience: "School leaders, teachers, club leaders",
     href: "/downloads/mrc-ghana-2027-call-to-participate.pdf",
     format: "PDF · 17 slides · 5.4 MB",
+    alternates: [{ label: "PowerPoint", href: "/downloads/mrc-ghana-2027-call-to-participate.pptx", format: "PPTX · 3.7 MB" }],
     status: "published",
   },
   { id: "coach-guide", title: "Coach Preparation Guide", description: "Planning, training timelines and team management.", audience: "Coaches", status: "forthcoming" },

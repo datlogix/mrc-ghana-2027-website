@@ -50,10 +50,7 @@ export default function ParticipatePage() {
               <h2 className="text-xl font-bold">Presenting MRC Ghana to your school or club?</h2>
               <p className="mt-1 text-muted">Download the Call to Participate slides: the sports, the benefits, the route to Crete and how to register.</p>
             </div>
-            <div className="flex shrink-0 flex-wrap gap-3">
-              <a href={asset("/downloads/mrc-ghana-2027-call-to-participate.pdf")} download className="btn btn-navy">Download PDF</a>
-              <a href={asset("/downloads/mrc-ghana-2027-call-to-participate.pptx")} download className="btn btn-outline">Download PowerPoint</a>
-            </div>
+            <a href={asset("/downloads/mrc-ghana-2027-call-to-participate.pdf")} download className="btn btn-navy shrink-0">Download slides (PDF)</a>
           </div>
           <Notice title="Age-based eligibility">
             Eligibility is based on age, not school class. Each category lists its published age bands; team members must be at least 10 years old in the sports with published rules.

@@ -28,7 +28,7 @@ export const categorySheets: Download[] = categories.map((c) => ({
 }));
 
 export const generalResources: Download[] = [
-  { id: "overview", title: "Competition Overview", description: "A summary of MRC Ghana 2027 for schools and families.", audience: "Everyone", status: "forthcoming" },
+  { id: "overview", title: "Competition Overview", description: "A summary of MRC Ghana 2027 for schools and families: the seven sports, who can take part, key dates and how to register.", audience: "Everyone", href: "/downloads/guides/mrc-ghana-2027-competition-overview.pdf", format: "PDF · A4 · 4 pages", status: "published" },
   {
     id: "call-to-participate",
     title: "Call to Participate — Schools & Robotics Clubs",
@@ -38,9 +38,9 @@ export const generalResources: Download[] = [
     format: "PDF · 17 slides · 5.4 MB",
     status: "published",
   },
-  { id: "coach-guide", title: "Coach Preparation Guide", description: "Planning, training timelines and team management.", audience: "Coaches", status: "forthcoming" },
-  { id: "inspection", title: "Technical Inspection Checklist", description: "What judges check before your robot competes.", audience: "Teams, coaches", status: "forthcoming" },
-  { id: "parents", title: "Parent Information Guide", description: "What to expect, safety, consent and the event day.", audience: "Parents", status: "forthcoming" },
+  { id: "coach-guide", title: "Coach Preparation Guide", description: "The coach’s role, a suggested preparation plan, what registration needs and a checklist for every sport.", audience: "Coaches", href: "/downloads/guides/mrc-ghana-2027-coach-preparation-guide.pdf", format: "PDF · A4 · 4 pages", status: "published" },
+  { id: "inspection", title: "Technical Inspection Checklist", description: "Tick-box equipment and safety checks for each sport, taken from the official rules, to bring on competition day.", audience: "Teams, coaches", href: "/downloads/guides/mrc-ghana-2027-technical-inspection-checklist.pdf", format: "PDF · A4 · 5 pages", status: "published" },
+  { id: "parents", title: "Parent Information Guide", description: "Eligibility, registration and consent, safety, photos and the competition days, for parents and guardians.", audience: "Parents", href: "/downloads/guides/mrc-ghana-2027-parent-information-guide.pdf", format: "PDF · A4 · 2 pages", status: "published" },
   { id: "prospectus", title: "Partnership Prospectus", description: "Partnership opportunities — request a copy via the Partners page.", audience: "Partners", status: "forthcoming" },
   { id: "programme", title: "Official Competition Programme", description: "Published once the timetable and venue are confirmed.", audience: "Everyone", status: "forthcoming" },
 ];

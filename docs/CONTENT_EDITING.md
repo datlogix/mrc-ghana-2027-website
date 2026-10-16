@@ -110,3 +110,7 @@ and [link text](/categories/drones) for links to other pages.
 
 - Open the pull request's preview link and look at the affected pages, including on a phone.
 - The build runs `validate:content` automatically and fails with a clear message if something breaks the rules.
+
+## Guides (Resources → Guides and documents)
+
+The Competition Overview, Coach Preparation Guide, Technical Inspection Checklist and Parent Information Guide are generated from `src/config/event.ts`, `src/data/categories.ts` and `src/data/steps.ts`. After changing those files, run `npm run guides` (and `npm run pdfs` for the category sheets) and commit the regenerated PDFs in `public/downloads/`.

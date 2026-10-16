@@ -297,7 +297,7 @@ export const categories: Category[] = [
     ],
     checklist: [
       "Choose Basic or Advanced and check your kit against that division's rules.",
-      "Confirm size (25 × 25 cm), weight (≤ 1 kg) and height (5–15 cm).",
+      "Confirm size (25 × 25 cm), weight (up to 1 kg) and height (5–15 cm).",
       "Fit and test the start/stop button.",
       "Practise on unfamiliar tracks with curves and intersections (go straight at crossings).",
       "Print the official practice track sample and time your runs.",
@@ -453,7 +453,7 @@ export const categories: Category[] = [
     ],
     checklist: [
       "Read the official design and shape rules before you start building.",
-      "Check size (25 × 25 cm) and mass (≤ 500 g); use only permitted materials.",
+      "Check size (25 × 25 cm) and mass (up to 500 g); use only permitted materials.",
       "Program the one-second warning beep and single-dart firing.",
       "Practise at 120 cm and 160 cm and record your accuracy.",
       "Pack safety glasses and protective equipment.",

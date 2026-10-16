@@ -29,7 +29,15 @@ export const categorySheets: Download[] = categories.map((c) => ({
 
 export const generalResources: Download[] = [
   { id: "overview", title: "Competition Overview", description: "A summary of MRC Ghana 2027 for schools and families.", audience: "Everyone", status: "forthcoming" },
-  { id: "school-pack", title: "School Invitation Pack", description: "Information for head teachers and school leaders.", audience: "School leaders", status: "forthcoming" },
+  {
+    id: "call-to-participate",
+    title: "Call to Participate — Schools & Robotics Clubs",
+    description: "A 17-slide presentation for head teachers, STEM teachers and club leaders: the seven sports, what students gain, the route to the Global Olympiad and how to register.",
+    audience: "School leaders, teachers, club leaders",
+    href: "/downloads/mrc-ghana-2027-call-to-participate.pdf",
+    format: "PDF · 17 slides · 5.4 MB",
+    status: "published",
+  },
   { id: "coach-guide", title: "Coach Preparation Guide", description: "Planning, training timelines and team management.", audience: "Coaches", status: "forthcoming" },
   { id: "inspection", title: "Technical Inspection Checklist", description: "What judges check before your robot competes.", audience: "Teams, coaches", status: "forthcoming" },
   { id: "parents", title: "Parent Information Guide", description: "What to expect, safety, consent and the event day.", audience: "Parents", status: "forthcoming" },

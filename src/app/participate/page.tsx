@@ -3,6 +3,7 @@ import { event } from "@/config/event";
 import { participationSteps } from "@/data/steps";
 import { ArrowIcon, Notice, PageHero, Section } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
+import { asset } from "@/lib/asset";
 
 export const metadata = pageMetadata({
   title: "How to Participate",
@@ -44,6 +45,13 @@ export default function ParticipatePage() {
           ))}
         </ol>
         <div className="mx-auto mt-14 max-w-3xl space-y-5">
+          <div className="card flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-xl font-bold">Presenting MRC Ghana to your school or club?</h2>
+              <p className="mt-1 text-muted">Download the Call to Participate slides: the sports, the benefits, the route to Crete and how to register.</p>
+            </div>
+            <a href={asset("/downloads/mrc-ghana-2027-call-to-participate.pdf")} download className="btn btn-navy shrink-0">Download slides (PDF)</a>
+          </div>
           <Notice title="Age-based eligibility">
             Eligibility is based on age, not school class. Each category lists its published age bands; team members must be at least 10 years old in the sports with published rules.
           </Notice>

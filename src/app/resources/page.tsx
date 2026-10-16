@@ -56,7 +56,7 @@ export default function ResourcesPage() {
       <Section labelledBy="more-title">
         <SectionHeading id="more-title" eyebrow="More resources" title="Guides and documents" />
         <div className="mt-6 max-w-3xl">
-          <Notice title="Forthcoming resources">These documents are in preparation and will be published here once approved by the organisers.</Notice>
+          <Notice title="Forthcoming resources">Documents marked “Coming soon” are in preparation and will be published here once approved by the organisers.</Notice>
         </div>
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((r) => (
@@ -67,7 +67,12 @@ export default function ResourcesPage() {
               </div>
               <p className="mt-2 text-[0.98rem] text-muted">{r.description}</p>
               <p className="mt-3 text-sm text-muted">For: {r.audience}</p>
-              {r.status === "published" && r.href && <a href={asset(r.href)} className="mt-4 inline-flex items-center gap-2 font-semibold text-navy-700 underline" download><DownloadIcon /> Download</a>}
+              {r.status === "published" && r.href && (
+                <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <a href={asset(r.href)} className="inline-flex items-center gap-2 font-semibold text-navy-700 underline" download><DownloadIcon /> Download</a>
+                  {r.format && <span className="text-sm text-muted">{r.format}</span>}
+                </p>
+              )}
             </li>
           ))}
         </ul>

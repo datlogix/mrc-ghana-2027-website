@@ -263,7 +263,9 @@ async function build(c: Category) {
   list([
     `Register through the official MRC Ghana 2027 registration application: ${SITE}/register`,
     "Have your team name, team members, coach details and chosen sport(s) ready.",
-    `Registration fees and deadlines: ${event.registration.fee ?? "to be announced"}${event.registration.deadline ? `; deadline ${event.registration.deadline}` : ""}.`,
+    event.registration.deadline
+      ? `Registration closes on ${event.registration.deadline}. Registration fees: ${event.registration.fee ?? "to be announced"}.`
+      : `Registration fees and deadlines: ${event.registration.fee ?? "to be announced"}.`,
     "Participant information is collected only through the official registration application.",
     `Questions: ${event.contact.email}`,
   ]);

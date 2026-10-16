@@ -296,7 +296,8 @@ export default function Home() {
                 ["Dates", event.dates.display],
                 ["City", `${event.city}, ${event.country}`],
                 ["Venue", "To be announced"],
-                ["Fees & deadlines", "To be announced"],
+                ["Registration closes", event.registration.deadline ?? "To be announced"],
+                ["Fees", event.registration.fee ?? "To be announced"],
                 ["Organiser", event.organisers.ghana.name],
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-4 px-5 py-4">

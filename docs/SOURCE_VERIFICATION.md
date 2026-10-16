@@ -25,6 +25,7 @@ Re-verify before each content release, and at least monthly until the event.
 |---|---|---|
 | Ghana event | 29–30 January 2027 (owner change, 15 Oct 2026; previously 30–31 Jan), Accra, Ghana; venue TBA | O1 |
 | Ghana organiser | The MakersPlace | O1 |
+| Registration deadline | Registration closes 15 January 2027 (owner, 16 Oct 2026). Fees still to be announced | O1 |
 | Ghana at the Global Olympiad | Ghana took part in the 2025 MRC Global Olympiad in Crete (owner, 15 Oct 2026) | O1 |
 | International organiser | Hellenic Educational Robotics Organization (H.E.R.O.), Heraklion, Crete | S1, S2 |
 | Global Olympiad 2027 | 23–26 April 2027, Chania, Crete, Greece; Chania Kladissos Indoor Hall; 6th edition | S1, S2 |
@@ -77,5 +78,5 @@ Notes:
 | Seven sport tiles (`public/images/categories/*.png`) | Official MRC tiles on https://www.he-ro.gr/minoan-robotsports-competition (Wix media `75e4cb_…`), downloaded 15 Oct 2026 at 480×480 | Category cards, category page headers, resources list, gallery placeholders | © H.E.R.O. Include the MRC mark. **Written permission from H.E.R.O. to use these on mrcghana.com is required before go-live.** |
 | Organiser logos (`public/images/brand/`: MRC Global Olympiad, H.E.R.O., The MakersPlace) | Supplied by the project owner, 15 Oct 2026 | Header/footer (MakersPlace), organisers & partners logo wall | Supplied and approved for use by the owner. MakersPlace logo flattened onto white and trimmed |
 | Gallery photos (`public/images/gallery/2025-*.jpg`, 13) | Owner-supplied Google Drive folder "MRC 2025" (Day 1–4 photos), selected 15 Oct 2026. Location confirmed by a "Municipality of Heraklion" banner in the photos | Gallery; Global Olympiad page | Owner-supplied; consent cover to be confirmed |
-| Call to Participate PDF (`public/downloads/mrc-ghana-2027-call-to-participate.pdf`) | Built 16 Oct 2026 from the Call to Participate slide deck. Photos: owner-supplied Drive folders “MRC 2025” and “MRC GLOBAL OLYMPIAD 2026” (H.E.R.O. official photos, 3–6 April 2026); sport tiles and logos as above | Resources and Participate pages | 2026 photos show identifiable children from other countries: **confirm H.E.R.O. permission and consent cover** |
+| Call to Participate PDF (`public/downloads/mrc-ghana-2027-call-to-participate.pdf`) | Built 16 Oct 2026 from the Call to Participate slide deck. Photos: owner-supplied Drive folders “MRC 2025” and “MRC GLOBAL OLYMPIAD 2026” (H.E.R.O. official photos, 3–6 April 2026); sport tiles and logos as above | Resources and Participate pages | 2026 photos show identifiable children from other countries. **H.E.R.O. permission confirmed by the owner, 16 Oct 2026** |
 | Hero photo (`public/images/hero-robotics-lab.jpg`) | Registration app asset (`mrcghana2027.lovable.app/assets/robotics-lab-*.jpg`) | Homepage hero | Owner to confirm licence/source |

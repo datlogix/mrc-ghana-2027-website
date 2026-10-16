@@ -83,3 +83,5 @@ Re-run on the staging URL (real CDN) for final figures.
 - [ ] **Photo consent:** confirm the MRC 2025 event photography consent covers use of these gallery photos on mrcghana.com (young participants are visible in some).
 - [ ] **H.E.R.O. permission** to use the official MRC sport tile images (and MRC mark) on mrcghana.com.
 - [x] Final go-live approval for the domain cut-over (owner, 15 Oct 2026).
+- [x] **H.E.R.O. permission** for the MRC Global Olympiad 2026 photos used in the Call to Participate PDF (owner, 16 Oct 2026).
+- [x] Registration deadline: 15 January 2027 (owner, 16 Oct 2026). Registration fees still to be announced.

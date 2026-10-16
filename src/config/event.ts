@@ -102,9 +102,11 @@ export const event = {
      * so this stays null and buttons link to the general registration start.
      */
     categoryParam: null as string | null,
-    /** Fee and deadline: leave null until approved. */
+    /** Fee: leave null until approved. */
     fee: null as string | null,
-    deadline: null as string | null,
+    /** Registration deadline (owner instruction, 16 Oct 2026). Set to null to show "to be announced". */
+    deadline: "15 January 2027" as string | null,
+    deadlineDate: "2027-01-15" as string | null,
   },
 
   contact: {

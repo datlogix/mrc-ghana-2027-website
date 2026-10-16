@@ -41,6 +41,8 @@ Each sport has its own page with a plain-English summary, a preparation checklis
 
 ## Still to be announced
 
-The venue, the daily timetable, registration fees and deadlines will be published on this website as soon as they are confirmed. See the [Programme & venue](/programme) page for updates.
+**Update, 16 October 2026:** registration closes on 15 January 2027.
+
+The venue, the daily timetable and registration fees will be published on this website as soon as they are confirmed. See the [Programme & venue](/programme) page for updates.
 
 Questions? [Contact us](/contact).

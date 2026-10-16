@@ -3,6 +3,8 @@
  * Undecided matters must say "To be announced".
  * `group` controls grouping on /faq. `home: true` shows the item on the homepage.
  */
+import { event } from "@/config/event";
+
 export type Faq = { q: string; a: string; group: FaqGroup; home?: boolean };
 export type FaqGroup = "The event" | "Participation" | "Registration" | "Preparation" | "International pathway" | "Partnerships";
 
@@ -56,7 +58,9 @@ export const faqs: Faq[] = [
   {
     group: "Registration",
     q: "Is there a registration fee or deadline?",
-    a: "To be announced. Fees and deadlines will be published here and in the registration application once approved by the organisers.",
+    a: event.registration.deadline
+      ? `Registration closes on ${event.registration.deadline}. Registration fees are to be announced and will be published here and in the registration application once approved by the organisers.`
+      : "To be announced. Fees and deadlines will be published here and in the registration application once approved by the organisers.",
   },
   {
     group: "Registration",

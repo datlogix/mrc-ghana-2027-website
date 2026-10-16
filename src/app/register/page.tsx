@@ -19,7 +19,7 @@ export default function RegisterPage() {
         crumbs={[{ name: "Register", path: "/register" }]}
         eyebrow="Registration"
         title="Register a team for MRC Ghana 2027."
-        intro={`${event.dates.display} · ${event.city}, ${event.country} · Venue to be announced`}
+        intro={`${event.dates.display} · ${event.city}, ${event.country} · Venue to be announced${event.registration.deadline ? ` · Registration closes ${event.registration.deadline}` : ""}`}
       />
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr]">
@@ -40,7 +40,8 @@ export default function RegisterPage() {
             </ol>
             <div className="mt-10">
               <Notice tone="info" title="Fees and deadlines">
-                {event.registration.fee ?? "Registration fees: to be announced."} {event.registration.deadline ?? "Registration deadline: to be announced."}
+                {event.registration.deadline ? <><strong>Registration closes on {event.registration.deadline}.</strong> </> : "Registration deadline: to be announced. "}
+                {event.registration.fee ?? "Registration fees: to be announced."}
               </Notice>
             </div>
           </div>

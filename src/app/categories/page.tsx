@@ -2,7 +2,6 @@ import Link from "next/link";
 import { categories } from "@/data/categories";
 import { event } from "@/config/event";
 import { CategoryCard } from "@/components/CategoryCard";
-import { Flyer } from "@/components/Flyer";
 import { Notice, PageHero, Section } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 
@@ -33,13 +32,12 @@ export default function CategoriesPage() {
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {categories.map((c) => <li key={c.slug}><CategoryCard c={c} /></li>)}
         </ul>
-        <div className="mt-16 grid items-center gap-10 rounded-[var(--radius-card)] bg-mist p-6 sm:p-10 lg:grid-cols-[minmax(0,22rem)_1fr]">
-          <Flyer id="categories" className="mx-auto w-full max-w-xs lg:max-w-none" />
+        <div className="mt-16 rounded-[var(--radius-card)] bg-mist p-6 sm:p-10">
           <div>
             <p className="eyebrow">Share the programme</p>
             <h2 className="mt-3 text-3xl font-extrabold">Seven categories, one weekend in Accra.</h2>
             <p className="mt-4 text-lg text-muted">
-              MRC Ghana 2027 takes place on {event.dates.display} in {event.city}. Download the official categories flyer to share with your school, club or community.
+              MRC Ghana 2027 takes place on {event.dates.display} in {event.city}. Share the categories with your school, club or community.
             </p>
             <ol className="mt-6 grid gap-2 sm:grid-cols-2">
               {categories.map((c, i) => (

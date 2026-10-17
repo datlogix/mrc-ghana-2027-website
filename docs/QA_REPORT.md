@@ -7,7 +7,7 @@
 
 | # | Criterion | Result | Evidence |
 |---|---|---|---|
-| 1 | Ghana event shows 29–30 January 2027 | ✅ | `event.ts`; build guard in `validate-content.ts` |
+| 1 | Ghana event shows 19–20 February 2027 | ✅ | `event.ts`; build guard in `validate-content.ts` |
 | 2 | Accra shown as host city | ✅ | Header, hero, footer, programme, structured data |
 | 3 | Venue shown as not yet announced | ✅ | Hero badge, programme, essentials. JSON-LD omits a venue name |
 | 4 | Exactly seven sports everywhere | ✅ | Single source `categories.ts`; build fails otherwise; forbidden-sport scan passes |
@@ -85,3 +85,4 @@ Re-run on the staging URL (real CDN) for final figures.
 - [x] Final go-live approval for the domain cut-over (owner, 15 Oct 2026).
 - [x] **H.E.R.O. permission** for the MRC Global Olympiad 2026 photos used in the Call to Participate PDF (owner, 16 Oct 2026).
 - [x] Registration deadline: 15 January 2027 (owner, 16 Oct 2026). Registration fees still to be announced.
+- [x] Event dates moved to 19–20 February 2027 (owner, 17 Oct 2026). The save-the-date and categories flyers still show January and are withdrawn from the site until updated versions are supplied.

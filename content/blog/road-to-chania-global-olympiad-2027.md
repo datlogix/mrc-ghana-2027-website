@@ -24,7 +24,7 @@ Ghana took part in the **2025 MRC Global Olympiad in Crete**. MRC Ghana 2027 bui
 
 ## Two separate events
 
-**MRC Ghana 2027** (29–30 January 2027, Accra) and the **MRC Global Olympiad 2027** (23–26 April 2027, Chania) are separate events with their own organisers and arrangements.
+**MRC Ghana 2027** (19–20 February 2027, Accra) and the **MRC Global Olympiad 2027** (23–26 April 2027, Chania) are separate events with their own organisers and arrangements.
 
 ## Is there a pathway from Ghana to Greece?
 

@@ -1,17 +1,15 @@
 ---
-title: MRC Ghana 2027 set for 29–30 January in Accra
+title: MRC Ghana 2027 set for 19–20 February in Accra
 date: 2026-10-15
-excerpt: The Minoan RobotSports Competition Ghana 2027 will take place on Friday 29 and Saturday 30 January 2027 in Accra. Here is what we know so far and how to get involved.
+excerpt: The Minoan RobotSports Competition Ghana 2027 will take place on Friday 19 and Saturday 20 February 2027 in Accra. Here is what we know so far and how to get involved.
 tags: [Announcements]
 cover: hero
 published: true
 ---
 
-**MRC Ghana 2027 will take place on Friday 29 and Saturday 30 January 2027 in Accra, Ghana.** The venue will be announced once it is confirmed.
+**MRC Ghana 2027 will take place on Friday 19 and Saturday 20 February 2027 in Accra, Ghana.** The venue will be announced once it is confirmed.
 
-> **Please note the dates.** If you saw earlier dates for MRC Ghana 2027, please use **29–30 January 2027**.
-
-![Save the date flyer: MRC Ghana, Minoan RoboSports Competition, January 29–30, 2027](/images/announcements/mrc-ghana-2027-save-the-date.jpg)
+> **Update, 17 October 2026: new dates.** MRC Ghana 2027 has moved to **19–20 February 2027**. If you saw earlier dates or flyers, please use the new dates.
 
 ## What is MRC Ghana 2027?
 

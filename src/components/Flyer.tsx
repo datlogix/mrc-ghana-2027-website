@@ -5,7 +5,11 @@ import callForPartnership from "../../public/images/announcements/mrc-ghana-2027
 import { asset } from "@/lib/asset";
 import { DownloadIcon } from "./ui";
 
-/** Official MRC Ghana 2027 announcement flyers (supplied by the organiser, 15 Oct 2026). */
+/**
+ * Official MRC Ghana 2027 announcement flyers (supplied by the organiser, 15 Oct 2026).
+ * The save-the-date and categories flyers show the old January dates, so they are
+ * not displayed until updated versions are supplied (17 Oct 2026).
+ */
 export const flyers = {
   "save-the-date": {
     image: saveTheDate,

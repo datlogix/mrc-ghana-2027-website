@@ -14,7 +14,7 @@ The easiest way to edit is directly on GitHub. Open the file, click the pencil i
 |---|---|
 | Event dates | `dates` (also update the check in `scripts/validate-content.ts` once the committee approves a change) |
 | Venue | Fill in `venue.name`, `address`, `googleMapsUrl`, `directions`, `accessibility` and `visitorGuidance`, then set `status: "confirmed"` |
-| Timetable | Add items to `programme.schedule["2027-01-29"]` / `["2027-01-30"]`, e.g. `{ time: "08:00", title: "Registration desk opens" }`, then set `programme.status: "confirmed"` |
+| Timetable | Add items to `programme.schedule["2027-02-19"]` / `["2027-02-20"]`, e.g. `{ time: "08:00", title: "Registration desk opens" }`, then set `programme.status: "confirmed"` |
 | Reporting / inspection arrangements | `programme.reportingAndInspection` |
 | Sports programme approval | `programmeApproval` → `status: "approved"`, `approvedOn`, `reference`. This removes the "subject to confirmation" notice. |
 | Registration status | `registration.status`: `"open"`, `"opening-soon"` or `"closed"` |

@@ -1,6 +1,5 @@
 import { event } from "@/config/event";
 import { ExternalLink, Notice, PageHero, Section } from "@/components/ui";
-import { Flyer } from "@/components/Flyer";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -21,8 +20,7 @@ export default function ProgrammePage() {
         intro={`${event.dates.display} · Ghana time (GMT)`}
       />
       <Section>
-        <div className="mb-14 grid items-center gap-10 lg:grid-cols-[minmax(0,22rem)_1fr]">
-          <Flyer id="save-the-date" priority className="mx-auto w-full max-w-xs lg:max-w-none" />
+        <div className="mb-14">
           <div>
             <p className="eyebrow">Save the date</p>
             <h2 className="mt-3 text-4xl font-extrabold">{event.dates.display}</h2>

@@ -11,7 +11,7 @@ export const participationSteps = [
   { title: "Prepare your robot or project", body: "Build, program and test against the size, weight and equipment rules — and practise explaining your design." },
   { title: "Register your team", body: `Submit your team through the official MRC Ghana 2027 registration application.${closes}` },
   { title: "Complete organiser checks", body: "Watch for confirmation emails, programme updates, consent requirements and technical-inspection arrangements." },
-  { title: "Compete at MRC Ghana 2027", body: "Pass technical inspection, then compete in Accra on 29–30 January 2027." },
+  { title: "Compete at MRC Ghana 2027", body: `Pass technical inspection, then compete in Accra on ${event.dates.display}.` },
   { title: "Follow results and selection", body: "Results and any international selection process will be published by the organisers. Selection is not automatic." },
 ] as const;
 
@@ -19,5 +19,5 @@ export const homeSteps = [
   { title: "Choose your sport", body: "Explore the seven categories and check the age bands and team rules." },
   { title: "Build and practise", body: "Prepare your robot, drone or project against the official specifications." },
   { title: "Register your team", body: `Submit your team through the official registration application.${closes}` },
-  { title: "Compete in Accra", body: "Pass technical inspection and compete on 29–30 January 2027." },
+  { title: "Compete in Accra", body: `Pass technical inspection and compete on ${event.dates.display}.` },
 ] as const;

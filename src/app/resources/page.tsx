@@ -46,10 +46,8 @@ export default function ResourcesPage() {
         </ul>
       </Section>
       <Section className="bg-mist" labelledBy="flyers-title">
-        <SectionHeading id="flyers-title" eyebrow="Announcements" title="Official flyers" intro="Share these with schools, clubs, parents and partners." />
+        <SectionHeading id="flyers-title" eyebrow="Announcements" title="Official flyers" intro="Share these with schools, clubs, parents and partners. Updated save-the-date and categories flyers with the new February dates are coming soon." />
         <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <li><Flyer id="save-the-date" sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw" /></li>
-          <li><Flyer id="categories" sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw" /></li>
           <li><Flyer id="call-for-partnership" sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw" /></li>
         </ul>
       </Section>

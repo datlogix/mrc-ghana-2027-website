@@ -1,7 +1,7 @@
 ---
 title: "Call for partnership: help build Ghana's next generation of tech leaders"
 date: 2026-10-15
-excerpt: MRC Ghana 2027 is inviting organisations to partner with us for an exciting robotics competition in Accra on 29–30 January 2027.
+excerpt: MRC Ghana 2027 is inviting organisations to partner with us for an exciting robotics competition in Accra on 19–20 February 2027.
 tags: [Partnerships, Announcements]
 cover: hero
 published: true
@@ -13,7 +13,7 @@ published: true
 
 ## Why partner with MRC Ghana 2027?
 
-MRC Ghana 2027 brings students, coaches and schools together on **29–30 January 2027 in Accra** to design, build and program robots that compete in seven sports. Partners help make that possible, and connect with young people developing practical engineering, coding and teamwork skills.
+MRC Ghana 2027 brings students, coaches and schools together on **19–20 February 2027 in Accra** to design, build and program robots that compete in seven sports. Partners help make that possible, and connect with young people developing practical engineering, coding and teamwork skills.
 
 Ways organisations can support the competition include:
 

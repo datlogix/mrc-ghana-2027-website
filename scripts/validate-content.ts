@@ -83,15 +83,15 @@ for (const g of gallery) {
 for (const p of partners) if (p.approved && !p.logo) fail(`Approved partner ${p.name} needs a logo path.`);
 
 // 7. Event facts that must not drift without an explicit decision.
-if (event.dates.start !== "2027-01-29" || event.dates.end !== "2027-01-30") fail("Ghana event dates changed — confirm with the organising committee and update this check.");
+if (event.dates.start !== "2027-02-19" || event.dates.end !== "2027-02-20") fail("Ghana event dates changed — confirm with the organising committee and update this check.");
 if (event.city !== "Accra") fail("Host city must be Accra.");
 if (event.venue.status === "confirmed" && !event.venue.name) fail("Venue marked confirmed but has no name.");
 if (event.globalOlympiad.dates.start !== "2027-04-23") warn("Global Olympiad dates changed — re-verify on he-ro.gr.");
 if (!event.registration.url) warn("NEXT_PUBLIC_REGISTRATION_URL is not set — /register will show the 'link being finalised' message.");
 
-// 7b. Stale event dates (the event moved from 30–31 to 29–30 January 2027 on 15 Oct 2026).
-if (/30\s*[–-]\s*31 January|31 January 2027|Sunday,? 31/i.test(publicText.replace(/If you saw earlier dates[^.]*\./g, "")))
-  fail("Public content still mentions the old 30–31 January dates — use 29–30 January 2027.");
+// 7b. Stale event dates (30–31 January → 29–30 January on 15 Oct 2026 → 19–20 February 2027 on 17 Oct 2026).
+if (/(29|30)\s*[–-]\s*(30|31) January|(29|30|31) January 2027|January 29|Sunday,? 31/i.test(publicText))
+  fail("Public content still mentions old January dates — use 19–20 February 2027.");
 
 // 8. No guarantees of qualification/travel funding.
 const GUARANTEE = /(guaranteed (place|qualification|selection)|automatically qualif|fully funded|free (flights|travel))/i;

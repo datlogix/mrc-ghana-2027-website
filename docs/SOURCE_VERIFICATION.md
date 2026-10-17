@@ -23,7 +23,7 @@ Re-verify before each content release, and at least monthly until the event.
 
 | Fact | Value published | Source |
 |---|---|---|
-| Ghana event | 29–30 January 2027 (owner change, 15 Oct 2026; previously 30–31 Jan), Accra, Ghana; venue TBA | O1 |
+| Ghana event | 19–20 February 2027 (owner change, 17 Oct 2026; previously 29–30 Jan, before that 30–31 Jan), Accra, Ghana; venue TBA (hosting request sent to Al-Rayan International School) | O1 |
 | Ghana organiser | The MakersPlace | O1 |
 | Registration deadline | Registration closes 15 January 2027 (owner, 16 Oct 2026). Fees still to be announced | O1 |
 | Ghana at the Global Olympiad | Ghana took part in the 2025 MRC Global Olympiad in Crete (owner, 15 Oct 2026) | O1 |

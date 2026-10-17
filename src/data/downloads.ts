@@ -35,7 +35,7 @@ export const generalResources: Download[] = [
     description: "A 17-slide presentation for head teachers, STEM teachers and club leaders: the seven sports, what students gain, the route to the Global Olympiad and how to register.",
     audience: "School leaders, teachers, club leaders",
     href: "/downloads/mrc-ghana-2027-call-to-participate.pdf",
-    format: "PDF · 17 slides · 5.4 MB",
+    format: "PDF · 17 slides · 5.0 MB",
     status: "published",
   },
   { id: "coach-guide", title: "Coach Preparation Guide", description: "The coach’s role, a suggested preparation plan, what registration needs and a checklist for every sport.", audience: "Coaches", href: "/downloads/guides/mrc-ghana-2027-coach-preparation-guide.pdf", format: "PDF · A4 · 4 pages", status: "published" },

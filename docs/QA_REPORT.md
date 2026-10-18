@@ -84,5 +84,5 @@ Re-run on the staging URL (real CDN) for final figures.
 - [ ] **H.E.R.O. permission** to use the official MRC sport tile images (and MRC mark) on mrcghana.com.
 - [x] Final go-live approval for the domain cut-over (owner, 15 Oct 2026).
 - [x] **H.E.R.O. permission** for the MRC Global Olympiad 2026 photos used in the Call to Participate PDF (owner, 16 Oct 2026).
-- [x] Registration deadline: 15 January 2027 (owner, 16 Oct 2026). Registration fees still to be announced.
+- [x] Registration deadline: 15 January 2027 (owner, 16 Oct 2026; confirmed unchanged after the move to 19–20 February, 18 Oct 2026). Registration fees still to be announced.
 - [x] Event dates moved to 19–20 February 2027 (owner, 17 Oct 2026). The save-the-date and categories flyers still show January and are withdrawn from the site until updated versions are supplied.

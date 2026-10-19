@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { z } from "zod";
 import { assistantSystem, ASSISTANT_LIMITS } from "@/lib/assistant";
+import { answerFromWebsite } from "@/lib/faq-match";
 import { HANDOFF_TOKEN } from "@/lib/whatsapp";
 
 export const runtime = "nodejs";
@@ -32,11 +33,10 @@ const chatSchema = z.object({
     .refine((m) => m[0].role === "user" && m[m.length - 1].role === "user", "Conversation must start and end with a visitor message."),
 });
 
-const errorText = (status: number, text: string) => new Response(text, { status, headers: { "Content-Type": "text/plain; charset=utf-8" } });
+const plainHeaders = { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" };
+const errorText = (status: number, text: string) => new Response(text, { status, headers: plainHeaders });
 
 export async function POST(req: Request) {
-  if (!process.env.ANTHROPIC_API_KEY) return errorText(503, "The assistant is not switched on yet.");
-
   const origin = req.headers.get("origin");
   const host = req.headers.get("host");
   if (origin && host && new URL(origin).host !== host) return errorText(403, "Invalid request origin.");
@@ -52,14 +52,23 @@ export async function POST(req: Request) {
   }
   if (!parsed.success) return errorText(400, "Please keep messages under 1,200 characters.");
 
+  const latest = parsed.data.messages[parsed.data.messages.length - 1].content;
+
+  // No Claude key set: answer from the website's own content, with no third-party service.
+  if (!process.env.ANTHROPIC_API_KEY) {
+    const { text, handoff } = answerFromWebsite(latest);
+    return new Response(handoff ? `${text}\n${HANDOFF_TOKEN}` : text, { headers: plainHeaders });
+  }
+
+  // Claude key set: answers come from Claude Haiku 5.5, grounded in the site's content.
   const client = new Anthropic();
   const encoder = new TextEncoder();
 
   const body = new ReadableStream<Uint8Array>({
     async start(controller) {
       try {
-        // Claude Haiku 5.5: fast and low-cost for site Q&A (owner choice, 19 Oct 2026).
-        // It has no server-side refusal fallback, so a decline is answered below with the WhatsApp hand-off.
+        // Claude Haiku 5.5 is fast and low-cost for site Q&A. It has no server-side refusal fallback,
+        // so a decline is answered below with the WhatsApp hand-off.
         const stream = client.messages.stream({
           model: "claude-haiku-5-5",
           max_tokens: 4000,
@@ -85,5 +94,5 @@ export async function POST(req: Request) {
     },
   });
 
-  return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" } });
+  return new Response(body, { headers: plainHeaders });
 }

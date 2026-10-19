@@ -141,7 +141,7 @@ export function ChatAssistant() {
           <div className="flex items-start justify-between gap-3 border-b border-line bg-navy-950 px-4 py-3 text-white sm:rounded-t-2xl" style={{ paddingTop: "max(12px, env(safe-area-inset-top, 0px))" }}>
             <div>
               <p id="chat-title" className="font-display text-base font-bold">MRC Ghana assistant</p>
-              <p className="text-xs text-gold-300">AI answers from this website. Check key details with the organisers.</p>
+              <p className="text-xs text-gold-300">Answers come from this website. Check key details with the organisers.</p>
             </div>
             <button type="button" onClick={() => { setOpen(false); launcherRef.current?.focus(); }} className="rounded-md p-1.5 text-white/80 hover:bg-white/10 hover:text-white" aria-label="Close the assistant">
               <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>

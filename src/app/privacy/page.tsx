@@ -39,7 +39,8 @@ export default function PrivacyPage() {
 
           <section id="assistant" aria-labelledby="assistant-h" className="scroll-mt-28 space-y-3">
             <h2 id="assistant-h" className="text-2xl font-bold">Website assistant (AI chat)</h2>
-            <p>The &ldquo;Ask a question&rdquo; assistant answers from the information published on this website. It is powered by Claude, an AI model from Anthropic. When you send a question, the conversation is sent to Anthropic to produce the answer. We do not store your conversations on our website; the chat is kept only in your browser tab and disappears when you close it. Under Anthropic&apos;s commercial terms, these messages are not used to train its models.</p>
+            <p>The &ldquo;Ask a question&rdquo; assistant answers from the information published on this website. Questions are matched against that information on our own server, and nothing is sent to another company. We do not store your conversations; the chat is kept only in your browser tab and disappears when you close it.</p>
+            <p>If an AI-powered version is switched on, your question is also sent to Anthropic, an AI company, to write the answer. Anthropic&apos;s API terms say that data sent through the API is not used to train its models by default.</p>
             <p>AI answers can occasionally be wrong. The official rules and the organisers always take precedence. Please do not type personal details, especially about children, into the chat.</p>
             <p>If you choose &ldquo;Ask the MakersPlace team on WhatsApp&rdquo;, WhatsApp opens with your question filled in. Nothing is sent until you press send in WhatsApp, and the conversation then takes place on WhatsApp under its own terms.</p>
           </section>

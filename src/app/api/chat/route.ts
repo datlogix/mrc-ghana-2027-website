@@ -58,13 +58,12 @@ export async function POST(req: Request) {
   const body = new ReadableStream<Uint8Array>({
     async start(controller) {
       try {
-        const stream = client.beta.messages.stream({
-          model: "claude-opus-5-5",
+        // Claude Haiku 5.5: fast and low-cost for site Q&A (owner choice, 19 Oct 2026).
+        // It has no server-side refusal fallback, so a decline is answered below with the WhatsApp hand-off.
+        const stream = client.messages.stream({
+          model: "claude-haiku-5-5",
           max_tokens: 4000,
           output_config: { effort: "low" },
-          // Re-run a safety decline on Anthropic's recommended fallback model instead of failing.
-          betas: ["server-side-fallback-2026-07-01"],
-          fallbacks: "default",
           system: [{ type: "text", text: assistantSystem, cache_control: { type: "ephemeral" } }],
           messages: parsed.data.messages,
         });

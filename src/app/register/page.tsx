@@ -7,8 +7,8 @@ import { Notice, PageHero, Section } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Register a Team",
-  description: `Register your team for ${event.shortName} (${event.dates.display}, ${event.city}) through the official registration application.`,
+  title: "Register a Robotics Team",
+  description: `Register your school or robotics club team for ${event.shortName}, ${event.dates.display} in ${event.city}. Registration closes on ${event.registration.deadline}.`,
   path: "/register",
 });
 

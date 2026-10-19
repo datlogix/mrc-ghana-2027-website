@@ -17,8 +17,8 @@ import { getPosts } from "@/lib/blog";
 import { PostCard } from "@/components/PostCard";
 
 export const metadata = pageMetadata({
-  title: `${event.shortName} | ${event.tagline}`,
-  description: `Ghana's Minoan RobotSports Competition: ${event.dates.display} in ${event.city}. Seven robot sports, from Drones to Archery. Register a team or become a partner.`,
+  title: `${event.shortName} | Robotics Competition in ${event.city}, 19–20 Feb`,
+  description: `Ghana's national robotics competition for schools and robotics clubs: seven robot sports, ${event.dates.display} in ${event.city}. Register a team by ${event.registration.deadline}.`,
   path: "/",
 });
 

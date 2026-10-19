@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Privacy and Data Protection",
-  description: "How the MRC Ghana 2027 website handles personal data, cookies, photography consent and website terms.",
+  description: "How the MRC Ghana 2027 website handles personal data, cookies, photography consent and children's information, and the website terms of use.",
   path: "/privacy",
 });
 

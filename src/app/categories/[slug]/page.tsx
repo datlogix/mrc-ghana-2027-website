@@ -20,7 +20,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const c = getCategory((await params).slug);
   if (!c) return {};
-  return pageMetadata({ title: `${c.name} — Competition Category`, description: c.summary, path: `/categories/${c.slug}` });
+  return pageMetadata({ title: `${c.name} — Rules and Age Bands`, description: c.summary, path: `/categories/${c.slug}` });
 }
 
 function Block({ id, title, items, children }: { id: string; title: string; items?: string[]; children?: React.ReactNode }) {

@@ -7,8 +7,8 @@ import { PageHero, Section } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Gallery",
-  description: "Photographs from MRC international competitions and MRC Ghana 2027, published with the appropriate permissions.",
+  title: "Photo Gallery",
+  description: "Photos from the MRC Global Olympiad in Crete, where Team Ghana took part in 2025: the parade of nations, robot racing, drones, Football 3×3 and the trophies.",
   path: "/gallery",
 });
 

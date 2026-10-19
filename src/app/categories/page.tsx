@@ -6,8 +6,8 @@ import { Notice, PageHero, Section } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Competition Categories",
-  description: "The seven MRC Ghana 2027 sports: Drones, Drone Soccer 3×3, Marathon, Football 3×3, Shooting, Archery and Exhibition.",
+  title: "Robot Sports and Competition Categories",
+  description: "The seven robot sports at MRC Ghana 2027: Drones, Drone Soccer 3×3, Marathon, Football 3×3, Shooting, Archery and Exhibition, with age bands and official rules.",
   path: "/categories",
 });
 

@@ -9,7 +9,7 @@ import { asset } from "@/lib/asset";
 
 export const metadata = pageMetadata({
   title: "Resources and Downloads",
-  description: "Download MRC Ghana 2027 category information sheets (PDF) and preparation resources.",
+  description: "Download the MRC Ghana 2027 sport information sheets, coach and parent guides, technical inspection checklist and Call to Participate slides (PDF).",
   path: "/resources",
 });
 

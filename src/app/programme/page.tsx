@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Programme and Venue",
-  description: `MRC Ghana 2027 programme and venue: ${event.dates.display}, ${event.city}. Timetable and venue to be announced.`,
+  description: `MRC Ghana 2027 runs on ${event.dates.display} in ${event.city}, Ghana. See the two-day programme, technical inspection and awards; the timetable and venue will be announced here.`,
   path: "/programme",
 });
 

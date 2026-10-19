@@ -5,8 +5,8 @@ import { ExternalLink, PageHero, Section } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact",
-  description: "Contact the MRC Ghana 2027 organisers for general enquiries, schools and teams, media and volunteering.",
+  title: "Contact the Organisers",
+  description: "Contact The MakersPlace, organisers of MRC Ghana 2027, about registering teams, schools, partnerships, media and volunteering. Email or call +233 249 391 817.",
   path: "/contact",
 });
 

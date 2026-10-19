@@ -31,8 +31,13 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    image: [
+      post.cover?.kind === "category" ? `${siteUrl}/images/categories/${post.cover.slug}.png` : `${siteUrl}/images/hero-robotics-lab.jpg`,
+      `${siteUrl}/opengraph-image`,
+    ],
+    inLanguage: "en-GB",
     author: { "@type": "Organization", name: post.author },
-    publisher: { "@type": "Organization", name: event.organisers.ghana.name },
+    publisher: { "@type": "Organization", name: event.organisers.ghana.name, logo: { "@type": "ImageObject", url: `${siteUrl}/images/brand/makersplace.png` } },
     mainEntityOfPage: `${siteUrl}/blog/${post.slug}`,
   };
 

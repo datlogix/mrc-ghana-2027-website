@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 import { asset } from "@/lib/asset";
 
 export const metadata = pageMetadata({
-  title: "How to Participate",
+  title: "How to Enter a Robotics Team",
   description: "A step-by-step guide to taking part in MRC Ghana 2027 — from choosing a sport to registering your team and competing in Accra.",
   path: "/participate",
 });

@@ -116,7 +116,8 @@ export const event = {
     partnershipsEmail: "partnerships@makersplacegh.com",
     /** Organiser telephone numbers (from the official MRC Ghana 2027 flyers, 15 Oct 2026). */
     phones: ["+233 249 391 817", "+233 556 310 034"],
-    whatsapp: null as string | null,
+    /** WhatsApp for chatbot hand-off and the contact page (owner instruction, 19 Oct 2026). */
+    whatsapp: "+233 556 310 034" as string | null,
     /** Only list verified official channels. */
     social: [] as { label: string; url: string }[],
   },

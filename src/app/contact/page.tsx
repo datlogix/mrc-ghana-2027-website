@@ -28,6 +28,9 @@ export default function ContactPage() {
                     <dd key={p}><a href={`tel:${p.replace(/\s/g, "")}`} className="font-semibold text-navy-700 underline underline-offset-4">{p}</a></dd>
                   ))}
                 </div>
+                {event.contact.whatsapp && (
+                  <div><dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">WhatsApp</dt><dd><a href={`https://wa.me/${event.contact.whatsapp.replace(/[^\d]/g, "")}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-navy-700 underline underline-offset-4">{event.contact.whatsapp}</a></dd></div>
+                )}
                 <div><dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">Partnerships</dt><dd><a href={`mailto:${event.contact.partnershipsEmail}`} className="font-semibold text-navy-700 underline underline-offset-4">{event.contact.partnershipsEmail}</a></dd></div>
                 <div><dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">Location</dt><dd>{event.city}, {event.country}</dd></div>
               </dl>

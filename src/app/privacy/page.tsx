@@ -31,9 +31,17 @@ export default function PrivacyPage() {
             <div className="prose-mrc"><ul>
               <li><strong>Enquiry forms</strong> (contact and partnership): the name, organisation, email, telephone and message you choose to send. We use these only to respond to your enquiry and keep a record of our correspondence.</li>
               <li><strong>Technical data</strong>: our hosting provider processes standard server logs (such as IP address and browser type) for security and reliability.</li>
+              <li><strong>Website assistant</strong>: questions you type into the AI chat, processed to answer them and not stored by us (see <a href="#assistant">Website assistant</a>).</li>
               <li><strong>Analytics</strong>: if enabled, we use privacy-friendly, cookie-free analytics that do not identify individual visitors.</li>
             </ul></div>
             <p>The public enquiry forms are not intended for children&apos;s personal information. Please do not include it.</p>
+          </section>
+
+          <section id="assistant" aria-labelledby="assistant-h" className="scroll-mt-28 space-y-3">
+            <h2 id="assistant-h" className="text-2xl font-bold">Website assistant (AI chat)</h2>
+            <p>The &ldquo;Ask a question&rdquo; assistant answers from the information published on this website. It is powered by Claude, an AI model from Anthropic. When you send a question, the conversation is sent to Anthropic to produce the answer. We do not store your conversations on our website; the chat is kept only in your browser tab and disappears when you close it. Under Anthropic&apos;s commercial terms, these messages are not used to train its models.</p>
+            <p>AI answers can occasionally be wrong. The official rules and the organisers always take precedence. Please do not type personal details, especially about children, into the chat.</p>
+            <p>If you choose &ldquo;Ask the MakersPlace team on WhatsApp&rdquo;, WhatsApp opens with your question filled in. Nothing is sent until you press send in WhatsApp, and the conversation then takes place on WhatsApp under its own terms.</p>
           </section>
 
           <section aria-labelledby="reg" className="space-y-3">

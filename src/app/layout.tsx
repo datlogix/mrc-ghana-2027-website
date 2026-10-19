@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ChatAssistant } from "@/components/ChatAssistant";
 import { event, siteUrl } from "@/config/event";
 import { eventJsonLd } from "@/lib/seo";
 import { isStaging, isStaticPreview } from "@/lib/asset";
@@ -31,6 +32,8 @@ export const viewport: Viewport = {
 };
 
 const plausible = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+// The site assistant appears only when the Claude API key is configured on the server.
+const chatEnabled = Boolean(process.env.ANTHROPIC_API_KEY) && !isStaticPreview;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -48,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
+        {chatEnabled && <ChatAssistant />}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd()) }} />
         {plausible && <Script defer data-domain={plausible} src="https://plausible.io/js/script.js" strategy="afterInteractive" />}
       </body>

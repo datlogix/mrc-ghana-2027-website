@@ -12,7 +12,9 @@
     "guides": "tsx scripts/generate-guides.ts",
     "validate:content": "tsx scripts/validate-content.ts",
     "check:links": "tsx scripts/check-links.ts",
-    "prebuild": "npm run validate:content"
+    "prebuild": "npm run validate:content",
+    "indexnow": "tsx scripts/indexnow.ts",
+    "postbuild": "tsx scripts/indexnow.ts --auto"
   },
   "engines": {
     "node": ">=20.9"

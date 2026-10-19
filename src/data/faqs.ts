@@ -37,7 +37,7 @@ export const faqs: Faq[] = [
     group: "Participation",
     home: true,
     q: "Who can take part?",
-    a: "Participation is based on age, not school class. For the six sports with published rules, all team members must be at least 10 years old and are placed in age categories (for example Kids 10–12, Teens/Senior 12+–18 and Adults 18+; Marathon also separates Teens 12+–15 and Senior 15+–18). How exact ages are calculated will be confirmed by the organisers. Exhibition eligibility is awaiting official rules.",
+    a: "Participation is based on age, not school class. For the six sports with published rules, all team members must be at least 10 years old and are placed in age categories (for example Kids 10–12, Teens/Senior 12+–18 and Adults 18+; Marathon also separates Teens 12+–15 and Senior 15+–18). Ages are counted on 19 February 2027, the first day of the competition. Exhibition eligibility is awaiting official rules.",
   },
   {
     group: "Participation",

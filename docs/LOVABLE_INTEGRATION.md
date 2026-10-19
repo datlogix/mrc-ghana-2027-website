@@ -58,7 +58,7 @@ The link opens in the same tab, which avoids pop-up blockers and keeps the back 
 Do not modify the data model silently. Document and review each change:
 
 - [x] Sports list shows the seven Ghana sports (verified on the app's landing page). Still to do: confirm the registration form's selection lists **exactly** the seven Ghana sports with these names: Drones · Drone Soccer 3×3 · Marathon (Basic / Advanced) · Football 3×3 · Shooting · Archery · Exhibition.
-- [ ] Eligibility uses **age**, not school class. Show the published bands and note that the organisers will confirm how age is calculated.
+- [ ] Eligibility uses **age**, not school class. Show the published bands; ages are counted on 19 February 2027, the first competition day (organiser decision, 19 Oct 2026).
 - [ ] Drone Soccer 3×3 and Football 3×3 explain alliances of three teams from the same school or institution.
 - [ ] Event details match: **19–20 February 2027** (moved from 29–30 January on 17 Oct 2026), Accra, venue to be announced. Registration closes 15 January 2027.
 - [x] Branding: the website now uses the app's theme (navy `#0a2b44`, gold `#d6a21f`, green `#156a4c`, DM Sans + Manrope, green·gold·navy stripe).

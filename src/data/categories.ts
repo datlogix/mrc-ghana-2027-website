@@ -72,7 +72,7 @@ const standardTeam = [
 ];
 
 const ageAmbiguity =
-  "The official rules publish age bands but do not state how age is calculated (for example, age on competition day or by year of birth), and adjacent bands share boundary ages (for example '10 to 12' and '12+'). The Ghana organising committee will confirm how ages are applied before registration closes.";
+  "For MRC Ghana 2027, ages are counted on 19 February 2027, the first day of the competition. The official rules do not set this date themselves, and adjacent bands share boundary ages (for example '10 to 12' and '12+'); the Ghana organising committee will confirm the category for anyone on a boundary age.";
 
 export const categories: Category[] = [
   {

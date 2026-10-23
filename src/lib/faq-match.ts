@@ -27,7 +27,8 @@ export function tokens(text: string): string[] {
 
 /** Questions that need a person: money back, complaints, safeguarding, press, and anything about a specific team or registration. */
 const HANDOFF_WORDS = ["refund", "invoice", "receipt", "complaint", "complain", "abuse", "safeguard", "safeguarding", "press", "journalist", "interview", "withdraw"];
-const PERSONAL_WORDS = ["team", "registration", "entry", "application", "status", "school", "club"];
+// Only questions about a specific team's status need a person. "How do I register my team?" is a general question.
+const PERSONAL_WORDS = ["status", "registered", "approved", "accepted", "selected", "eligible", "eligibility", "confirmed"];
 
 const GREETING =
   "Hello! I can help with the dates, the seven robot sports, age rules, registration, fees, the Global Olympiad and partnerships. What would you like to know?";

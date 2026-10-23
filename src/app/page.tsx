@@ -9,7 +9,7 @@ import { Countdown } from "@/components/Countdown";
 import Image from "next/image";
 import heroImage from "../../public/images/hero-robotics-lab.jpg";
 import { VideoEmbed } from "@/components/VideoEmbed";
-import { ArrowIcon, Section, SectionHeading } from "@/components/ui";
+import { ArrowIcon, ExternalLink, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 import { homeSteps } from "@/data/steps";
 import { PartnerLogos } from "@/components/PartnerLogos";
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="hero-overlay absolute inset-0 -z-10" aria-hidden />
         <div className="container-x pb-14 pt-14 sm:pb-20 sm:pt-20 lg:pb-24 lg:pt-24">
           <div className="max-w-2xl on-dark">
-            <p className="eyebrow animate-rise">{event.organisers.ghana.name} · Minoan RobotSports Competition</p>
+            <p className="eyebrow animate-rise"><ExternalLink href={event.organisers.ghana.url} className="underline underline-offset-4">{event.organisers.ghana.name}</ExternalLink> · Minoan RobotSports Competition</p>
             <h1 id="hero-title" className="mt-5 text-5xl font-extrabold !text-white sm:text-6xl lg:text-7xl">
               MRC Ghana <span className="text-gold-500">2027</span>
             </h1>
@@ -109,7 +109,7 @@ export default function Home() {
                   The Minoan RobotSports Competition turns engineering into athletics. Students design, build and program robots and drones that race, shoot, play football and fly precision missions — under clear rules, against the clock and against each other.
                 </p>
                 <p className="mt-4">
-                  MRC is an international programme of the {event.organisers.international.name} ({event.organisers.international.abbreviation}). In Ghana, it is organised by {event.organisers.ghana.name}.
+                  MRC is an international programme of the {event.organisers.international.name} ({event.organisers.international.abbreviation}). In Ghana, it is organised by <ExternalLink href={event.organisers.ghana.url} className="font-semibold text-navy-700 underline underline-offset-4">{event.organisers.ghana.name}</ExternalLink>.
                 </p>
               </>
             }

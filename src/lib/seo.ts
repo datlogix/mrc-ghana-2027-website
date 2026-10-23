@@ -60,6 +60,7 @@ export function eventJsonLd() {
         "@id": `${siteUrl}/#organiser`,
         name: event.organisers.ghana.name,
         url: event.organisers.ghana.url,
+        description: `Ghana organiser of ${event.name}, with the international programme of ${event.organisers.international.name}.`,
         logo: `${siteUrl}/images/brand/makersplace.png`,
         email: event.contact.email,
         telephone: event.contact.phones[0],

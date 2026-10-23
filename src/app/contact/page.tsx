@@ -19,7 +19,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div className="card p-6">
               <h2 className="text-lg font-bold">Organiser</h2>
-              <p className="mt-1">{event.organisers.ghana.name}</p>
+              <p className="mt-1"><ExternalLink href={event.organisers.ghana.url} className="font-semibold text-navy-700 underline underline-offset-4">{event.organisers.ghana.name}</ExternalLink></p>
               <dl className="mt-4 space-y-3">
                 <div><dt className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">Email</dt><dd><a href={`mailto:${event.contact.email}`} className="font-semibold text-navy-700 underline underline-offset-4">{event.contact.email}</a></dd></div>
                 <div>
